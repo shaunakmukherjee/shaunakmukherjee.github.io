@@ -21,7 +21,7 @@ export const aboutData = {
   paragraphOne: "Hey there! I'm a recent Computer Science Masters graduate from Johns Hopkins University, having worked most recently as a Lead Developer at an edutech startup. Through my gap year, I've sharpened my skills and enjoyed developing various applications. Creativity and work ethic are my main principles.",
   paragraphTwo: "I specialize in full-stack software development in a variety of languages and frameworks, and have led several teams in various projects throughout my educational and professional career.",
   paragraphThree: "Apart from Pythoning my way through highly Reactive environments in Javascripted lands, I enjoy playing/watching football, podcasting, standups, singing, and unique hikes. ",
-  resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
+  resume: 'https://drive.google.com/file/d/1tWxmQReKRgeDL1ILaajZaWKcbPsfAVME/view?usp=sharing', // if no resume, the button will not show up
 };
 
 // PROJECTS DATA
