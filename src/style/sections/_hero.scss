@@ -8,18 +8,14 @@
   color: $dark-blue-text;
   padding: 0rem 5.6rem;
   margin-bottom: 0;
-  background-color: white;
+  background-color: #FFF0F5	;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: -1;
 
-  // If you want to set a background image on the hero section, uncomment these with yout custom image
 
-  //background: url("/src/images/background_img.jpg");
-  //background-position: center;
- // background-size: cover;
 
   @include respond(phone) {
     padding: 0rem $default-font-size;

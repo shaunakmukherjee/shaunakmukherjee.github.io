@@ -18,9 +18,9 @@ export const heroData = {
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: "Hey there! I'm a recent Computer Science graduate from Johns Hopkins University, having worked most recently as a Lead Developer at an edutech startup.",
+  paragraphOne: "Hey there! I'm a recent Computer Science Masters graduate from Johns Hopkins University, having worked most recently as a Lead Developer at an edutech startup. Through my gap year, I've sharpened my skills and enjoyed developing various applications. Creativity and work ethic are my main principles.",
   paragraphTwo: "I specialize in full-stack software development in a variety of languages and frameworks, and have led several teams in various projects throughout my educational and professional career.",
-  paragraphThree: '',
+  paragraphThree: "Apart from Pythoning my way through highly Reactive environments in Javascripted lands, I enjoy playing/watching football, podcasting, standups, singing, and unique hikes. ",
   resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
 };
 
@@ -50,7 +50,7 @@ export const projectsData = [
     img: 'logo_ijamu.png',
     title: 'iJAMU',
     info: 'A social media application website for musicians and artists, developed on Python (Django) with HTML/CSS as frontend',
-    info1: 'it allows one to search, add and collaborate with likeminded musicians all around the world sharing your own interests.',
+    info1: 'It allows one to search, add and collaborate with likeminded musicians all around the world sharing your own interests.',
     info2: 'Collaborators : Rohit Ravoori, Chi Young Shin.',
     url: 'https://github.com/shaunakmukherjee/iJamU-the-jamming-app',
     repo: '', 
@@ -60,10 +60,29 @@ export const projectsData = [
     img: 'grey.jpg',
     title: 'SHOPBOT',
     info: 'An automated web scraping tool built on Python and information retrieval concepts',
-    info1: 'It scours the Barnes & Noble repository and facilitate actions of online book shopping. The payment process has not been added for security purposes.',
+    info1: 'It scours the Barnes & Noble repository and facilitate actions of online book shopping.',
     info2: 'Collaborator : Vijayram Illa',
     url: 'https://github.com/shaunakmukherjee/Shopping_Bot',
     repo: '', 
+  },
+  {
+    id: nanoid(),
+    img: 'grey.jpg',
+    title: 'UNIVERSITYVISITS / YOONI',
+    info: 'Frontend HTML/CSS code for University Visits - a website dedicated to organizing visits for college/high school students to various universities.',
+    info1: 'Worked with UX/UI engineer to develop frontend coupled with Python-based backend.',
+    info2: 'Collaborator : Youjin Jang',
+    url: 'https://github.com/shaunakmukherjee/universityvisits',
+    repo: '', 
+  },
+  {
+    id: nanoid(),
+    img: 'jhu_logo.png',
+    title: 'RESEARCH THESIS',
+    info: 'A detailed study on Distributed DoS attacks and algorithms for their detection and mitigation',
+    info2: 'Done under the guidance of Prof. Vladimir Braverman, under the department of Computer Science at Johns Hopkins University.',
+    url: 'https://www.researchgate.net/publication/329786869_A_Detailed_Study_on_Distributed_Denial-of-Service_attacks_and_algorithms_pertaining_to_their_detection_and_mitigation',
+    repo: '',
   },
 ];
 
