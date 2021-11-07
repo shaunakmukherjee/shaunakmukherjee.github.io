@@ -28,6 +28,16 @@ export const aboutData = {
 export const projectsData = [
   {
     id: nanoid(),
+    img: 'morty.png',
+    title: 'RICKANDMORTY',
+    info: 'A full interactive app to view and favourite characters from the beloved TV show, built on ReactJS + NodeJS + GraphQL',
+    info2: 'It features a fully immersive UI with all characters from the RicknMorty API shown to be viewed, added and removed by users',
+    url: 'https://github.com/shaunakmukherjee/rickandmorty',
+    repo: '', 
+
+  },
+  {
+    id: nanoid(),
     img: 'ic_launcher-playstore.png',
     title: 'TREQUIZTA',
     info: 'A football trivia app built on Kotlin',
