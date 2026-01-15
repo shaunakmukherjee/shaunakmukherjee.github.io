@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-      "deploy": "npm run build && gh-pages -d out",
-    "lint": "eslint"
+"deploy": "npm run build && gh-pages -d out --dotfiles",
+   "lint": "eslint"
   },
   "dependencies": {
     "autoprefixer": "^10.4.23",
