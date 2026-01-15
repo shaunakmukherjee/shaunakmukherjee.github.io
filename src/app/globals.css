@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+
+
+:root {
+  --bg: 0 0% 98%;
+  --fg: 222 47% 11%;
+  --muted: 215 16% 47%;
+  --accent: 245 90% 60%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 222 47% 11%;
+    --fg: 210 40% 98%;
+    --muted: 215 20% 65%;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--bg));
+  color: hsl(var(--fg));
+}
+
