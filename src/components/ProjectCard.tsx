@@ -12,6 +12,27 @@ type Props = {
   link: string
 }
 
+const getTechBadgeColor = (tech: string): string => {
+  // AI/ML stack
+  if (['RAG', 'Vector Search', 'Embeddings', 'Vector Database', 'LLMs', 'AI Image Generation', 'Claude API', 'AI Agent', 'AI Coaching', 'Multi-Agent Pipelines', 'Speech-to-Text'].includes(tech)) {
+    return 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+  }
+  // Frontend
+  if (['React', 'Next.js', 'TypeScript', 'Tailwind'].includes(tech)) {
+    return 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
+  }
+  // Backend
+  if (['Python', 'FastAPI', 'Supabase', 'RLS'].includes(tech)) {
+    return 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
+  }
+  // Mobile
+  if (tech === 'Mobile App') {
+    return 'bg-orange-500/20 text-orange-300 border border-orange-500/30'
+  }
+  // Other
+  return 'bg-white/10 text-white/80 border border-white/20'
+}
+
 export default function ProjectCard({
   title,
   description,
@@ -55,7 +76,7 @@ export default function ProjectCard({
           {stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/80"
+              className={`rounded-full px-3 py-1 text-xs font-medium transition hover:scale-105 ${getTechBadgeColor(tech)}`}
             >
               {tech}
             </span>

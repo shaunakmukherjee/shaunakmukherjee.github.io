@@ -24,8 +24,9 @@ export default function Navbar() {
         {/* Left */}
         <a
           href="#"
-          className="font-semibold tracking-tight text-white"
+          className="font-semibold tracking-tight text-white/95 flex items-center gap-2"
         >
+          <span className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--accent))] shadow-[0_0_8px_rgba(16,185,129,0.25)]" />
           Shaun Mukherjee
         </a>
 

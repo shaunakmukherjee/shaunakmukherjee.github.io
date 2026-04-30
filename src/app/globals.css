@@ -3,17 +3,18 @@
 
 
 :root {
-  --bg: 0 0% 98%;
-  --fg: 222 47% 11%;
-  --muted: 215 16% 47%;
-  --accent: 245 90% 60%;
+  --bg: 220 15% 8%; /* deep navy */
+  --fg: 210 50% 96%; /* near white */
+  --muted: 210 10% 60%;
+  --accent: 175 85% 55%; /* teal accent */
+  --accent-2: 320 85% 62%; /* magenta accent for contrast */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: 222 47% 11%;
-    --fg: 210 40% 98%;
-    --muted: 215 20% 65%;
+    --bg: 220 12% 6%;
+    --fg: 210 50% 98%;
+    --muted: 210 12% 66%;
   }
 }
 html {
@@ -23,5 +24,56 @@ html {
 body {
   background-color: hsl(var(--bg));
   color: hsl(var(--fg));
+}
+
+/* gentle radial vignette to give unique landing tone */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px 400px at 15% 20%, rgba(41, 128, 126, 0.06), transparent 20%), radial-gradient(600px 400px at 85% 80%, rgba(211, 56, 131, 0.04), transparent 20%);
+  mix-blend-mode: overlay;
+}
+
+/* Animated gradient text */
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent)),
+    hsl(var(--accent-2)),
+    hsl(var(--accent))
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 3s ease-in-out infinite;
+}
+
+/* Enhanced button animations */
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+  }
+}
+
+.btn-primary:hover {
+  animation: buttonGlow 1.5s ease-in-out;
 }
 

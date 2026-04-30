@@ -18,6 +18,14 @@ export const projects = [
     link: "https://ked-phase-1.vercel.app/", // replace with real link
   },
   {
+    title: "YourLume",
+    description: "An AI research and study suite designed to streamline data ingestion and provide intelligent insights.",
+    outcome: "Users can upload documents, which are processed through RAG pipelines to generate summaries, insights, and visualizations",
+    image: "/projects/lume-3.png", 
+    link: "https://lume.ked-ai.com/",
+    stack: ["Next.js", "AI Agent", "Supabase", "Tailwind", "Claude API", "RAG" ],
+  },
+  {
     title: "Flippable AI",
     description:
       "A full-stack AI application acting as a digital project partner for homeowners and small-scale property developers.",
@@ -33,7 +41,7 @@ export const projects = [
       "Vector Database",
     ],
     image: "/projects/ai-rag-new-2.png",
-    link: "https://flippable-ai-mvp.vercel.app/", // replace with real link
+    link: "#", 
   },
     {
     title: "SoulSource",
