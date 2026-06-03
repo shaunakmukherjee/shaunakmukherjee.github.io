@@ -1,29 +1,12 @@
 // src/data/projects.ts
 export const projects = [
   {
-    title: "KedAI",
-    description:
-      "AI-powered platform for visualising concepts, artefacts, and environments using generated imagery grounded in source-backed explanations.",
-    outcome:
-      "Progressive loading, cached visualisations, and non-blocking AI workflows for a smooth UX.",
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "RAG",
-      "Vector Search",
-      "AI Image Generation",
-    ],
-    image: "/projects/ked-ai-2.png",
-    link: "https://ked-phase-1.vercel.app/", // replace with real link
-  },
-  {
     title: "YourLume",
     description: "An AI research and study suite designed to streamline data ingestion and provide intelligent insights.",
     outcome: "Users can upload documents, which are processed through RAG pipelines to generate summaries, insights, and visualizations",
     image: "/projects/lume-3.png", 
     link: "https://lume.ked-ai.com/",
-    stack: ["Next.js", "AI Agent", "Supabase", "Tailwind", "Claude API", "RAG" ],
+    stack: ["Next.js", "AI Agents", "Product Management", "AI engineering", "RAG" ],
   },
   {
     title: "Flippable AI",
