@@ -3,10 +3,10 @@ export const projects = [
   {
     title: "YourLume",
     description: "An AI research and study suite designed to streamline data ingestion and provide intelligent insights.",
-    outcome: "Users can upload documents, which are processed through RAG pipelines to generate summaries, insights, and visualizations",
+    outcome: "Users can upload documents, which are processed through AI pipelines to generate summaries, insights, and visualizations",
     image: "/projects/lume-3.png", 
     link: "https://lume.ked-ai.com/",
-    stack: ["Next.js", "AI Agents", "Product Management", "AI engineering", "RAG" ],
+    stack: ["Next.js", "AI Agents", "Product Management", "AI engineering" ],
   },
   {
     title: "Flippable AI",
