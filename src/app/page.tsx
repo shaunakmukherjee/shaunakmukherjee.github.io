@@ -23,7 +23,7 @@ export default function Home() {
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
           Senior AI & Full-Stack engineer focused on production-ready
-          architectures, efficient RAG systems, and delightful user flows.
+          architectures, efficient LLM and RAG systems, and delightful user flows.
           I partner with early-stage founders to convert ideas into fundable
           products with measurable traction.
         </p>
