@@ -35,6 +35,33 @@ interface Opportunity {
   impactColor: AccentColor;
 }
 
+/**
+ *     {
+      id: "02",
+      title: "AI-Powered Knowledge Layer for Venture Portfolios",
+      type: "Client Upsell Asset · VC / SaaS",
+      typeColor: "teal",
+      icon: DatabaseZap,
+      stack: ["RAG Architecture", "Supabase Vector", "LLM Orchestration"],
+      description:
+        "A modular, white-label conversational intelligence component the agency can offer directly to VC clients. It aggregates entire startup portfolio data, whitepapers, and deal updates into a single unified knowledge base — letting limited partners query the portfolio like a senior analyst.",
+      impact: "Retainer upsell: $8k–$20k/mo",
+      impactColor: "teal",
+    },
+    {
+      id: "03",
+      title: "Dynamic Content & Localization Engine",
+      type: "Conversion Optimization · Webflow",
+      typeColor: "violet",
+      icon: Network,
+      stack: ["Edge Functions", "LLM Middleware", "Segment API"],
+      description:
+        "An automation pipeline that adapts landing page copy, case studies, and feature emphasis in real-time based on the visitor's company size, funding stage, and industry vertical — serving a Fintech founder a fundamentally different page than a Web3 protocol team, without touching the CMS.",
+      impact: "+34% qualified lead lift (est.)",
+      impactColor: "violet",
+    },
+    
+ */
 // ─── Hardcoded Result Data ────────────────────────────────────────────────────
 const RESULT_DATA: {
   targetSite: string;
@@ -60,30 +87,6 @@ const RESULT_DATA: {
         "A smart, conversational intake engine embedded on the agency's site that interviews founders, parses their existing pitch decks and PRDs, maps out a complete feature matrix, and automatically drafts an accurate, technical project proposal for agency partners to review — within 5 minutes of the first message.",
       impact: "~12 hrs saved per proposal",
       impactColor: "gold",
-    },
-    {
-      id: "02",
-      title: "AI-Powered Knowledge Layer for Venture Portfolios",
-      type: "Client Upsell Asset · VC / SaaS",
-      typeColor: "teal",
-      icon: DatabaseZap,
-      stack: ["RAG Architecture", "Supabase Vector", "LLM Orchestration"],
-      description:
-        "A modular, white-label conversational intelligence component the agency can offer directly to VC clients. It aggregates entire startup portfolio data, whitepapers, and deal updates into a single unified knowledge base — letting limited partners query the portfolio like a senior analyst.",
-      impact: "Retainer upsell: $8k–$20k/mo",
-      impactColor: "teal",
-    },
-    {
-      id: "03",
-      title: "Dynamic Content & Localization Engine",
-      type: "Conversion Optimization · Webflow",
-      typeColor: "violet",
-      icon: Network,
-      stack: ["Edge Functions", "LLM Middleware", "Segment API"],
-      description:
-        "An automation pipeline that adapts landing page copy, case studies, and feature emphasis in real-time based on the visitor's company size, funding stage, and industry vertical — serving a Fintech founder a fundamentally different page than a Web3 protocol team, without touching the CMS.",
-      impact: "+34% qualified lead lift (est.)",
-      impactColor: "violet",
     },
   ],
 };
