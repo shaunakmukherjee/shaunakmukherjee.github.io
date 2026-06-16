@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"\\\\\\\\\\\\\\\\wsl.localhost\\\\\\\\Ubuntu\\\\\\\\home\\\\\\\\shaun\\\\\\\\shaunakmukherjee.github.io\" 2>/dev/null; cat tsconfig.json 2>/dev/null | head -40)",
+      "Read(///wsl.localhost/Ubuntu/home/shaun/**)",
+      "PowerShell($out = npx tsc --noEmit 2>&1 | Out-String; \\($out -split \"`n\" | Select-String \"agency-discovery\"\\) -join \"`n\")",
+      "Bash(rm -f tsc-out.txt)",
+      "Bash(npx tsc *)",
+      "Bash(cd \"//wsl.localhost/Ubuntu/home/shaun/shaunakmukherjee.github.io\" && npx tsc --noEmit 2>&1 | head -40; echo \"EXIT: done\")",
+      "Bash(wsl.exe -d Ubuntu bash -lc \"cd /home/shaun/shaunakmukherjee.github.io && npx tsc --noEmit; echo EXIT:\\\\$?\")"
+    ]
+  }
+}
