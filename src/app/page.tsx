@@ -11,21 +11,22 @@ export default function Home() {
       {/* HERO */}
       <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center pt-20">
         <div className="mb-6 inline-flex items-center gap-3">
-          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">AI Engineer • Product Builder</span>
+          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Principal AI Engineer • Technical Consultant</span>
           <span className="text-sm text-white/50">Available for advisory & fractional leadership</span>
         </div>
 
         <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-6xl">
-          I help<span className="animate-gradient"> founders</span> build and ship
-          <span className="animate-gradient"> AI powered products</span>
+          I partner with <span className="animate-gradient">select founders</span> to architect
+          <span className="animate-gradient"> AI products</span>
           <br className="hidden sm:block" /> that users love and investors understand.
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
           Senior AI & Full-Stack engineer focused on production-ready
           architectures, efficient LLM and RAG systems, and delightful user flows.
-          I partner with early-stage founders to convert ideas into fundable
-          products with measurable traction.
+          I engineer resilient, multi-tenant AI systems, agentic workflow architectures, and deep data pipelines. 
+      Partnering as an elite technical asset for select venture-backed startups and premium engineering teams, 
+      I clear critical roadmap blocks, audit infrastructure, and scale ideas into production-ready digital capital.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -33,7 +34,7 @@ export default function Home() {
             href="https://calendly.com/shaunmukherjee-proton/30min"
             className="rounded-xl animate-gradient px-7 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:translate-y-[-1px] hover:shadow-indigo-500/40"
           >
-            Book a Consultation
+            Retain as Technical Advisor
           </a>
 
           <a
@@ -47,7 +48,7 @@ export default function Home() {
             href="#projects"
             className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
           >
-            View projects
+            Review Architectural Portfolio
           </a>
         </div>
       </section>
@@ -75,11 +76,22 @@ export default function Home() {
               🧠 AI strategy & architecture
             </h3>
             <p className="mt-3 text-white/70">
-              Design practical AI systems — RAG, agents,
-              streaming workflows — grounded in real
-              user needs, not demos.
+             Transitioning complex technical concepts from zero to a robust production roadmap. I drive system 
+        design, decouple data access layers, eliminate performance bottlenecks, and establish highly optimized, 
+        cloud-native boilerplate foundations that scale linearly
             </p>
           </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-white/20">
+      <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+        <span>🏗️</span> Production-Grade AI Orchestration
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/70">
+        Moving pipelines past basic stateless wrappers into production-ready system. Designing deterministic 
+        RAG pipelines, semantic indexing schemas, persistent multi-tenant context memory tracking, and isolated multi-step 
+        agentic workflows that never compromise synchronous application runtime.
+      </p>
+    </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
             <h3 className="text-xl font-semibold">

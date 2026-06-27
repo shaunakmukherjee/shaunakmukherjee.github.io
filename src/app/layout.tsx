@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar'
+// @ts-ignore: Next.js supports global CSS imports in the app directory
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -9,30 +10,30 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL("https://shaunakmukherjee.github.io"),
-  title: "Shaun — AI Engineer & Full-Stack Builder",
+  title: "Shaun — Principal AI Architect & Engineer",
   description:
-    "I build production-ready AI systems, mobile apps, and modern web platforms.",
+    "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
   openGraph: {
-    title: "Shaun — AI Engineer & Full-Stack Builder",
+    title: "Shaun — Principal AI Engineer and Builder",
     description:
-      "Production-ready AI systems, RAG pipelines, mobile apps, and modern web products.",
+      "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
     url: "https://shaunakmukherjee.github.io",
-    siteName: "Shaun Portfolio",
+    siteName: "Shaun's Portfolio",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Shaun — AI Engineer & Full-Stack Builder",
+        alt: "Shaun — Principal AI Engineer and Builder",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaun — AI Engineer & Full-Stack Builder",
+    title: "Shaun — Principal AI Architect & Engineer",
     description:
-      "Production-ready AI systems, RAG pipelines, mobile apps, and modern web products.",
+      "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
     images: ["/og.png"],
   },
 }
