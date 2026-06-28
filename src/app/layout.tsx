@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 // @ts-ignore: Next.js supports global CSS imports in the app directory
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -49,6 +50,11 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navbar />
         {children}
+        <Script
+            src="https://cloud.umami.is/script.js" 
+            data-website-id="3e8748e1-9315-4cde-b85a-15f384f9886b"
+            strategy="afterInteractive"
+          />
       </body>
     </html>
   )
