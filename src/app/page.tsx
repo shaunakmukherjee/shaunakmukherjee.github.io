@@ -8,10 +8,34 @@ export default function Home() {
       {/* Background glow */}
       <div className="pointer-events-none absolute -top-32 left-1/2 h-[520px] w-[980px] -translate-x-1/2 bg-gradient-to-br from-cyan-400/20 via-pink-400/8 to-transparent blur-3xl" />
 
+      {/* RISK & SCOPE RADAR CALLOUT - TOP OF PAGE */}
+      <div className="relative mx-auto max-w-5xl pt-16">
+        <div className="rounded-2xl border border-cyan-400/30 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-cyan-950/40 p-4 backdrop-blur-sm">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-lg">⚡</span>
+              <div>
+                <span className="text-sm font-medium text-cyan-300">Beta Access</span>
+                <p className="text-sm text-white/70">Automated Risk & Scope Radar MVP</p>
+              </div>
+            </div>
+            <a
+              href="https://client-call-deliverables-engine.vercel.app/app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-cyan-500/20 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/30 hover:text-cyan-200"
+            >
+              👉 Try for Free
+              <span className="text-cyan-400">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* HERO */}
-      <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center pt-20">
+      <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center pt-12">
         <div className="mb-6 inline-flex items-center gap-3">
-          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Principal AI Engineer • Technical Consultant</span>
+          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Principal AI Architect • RAG Infrastructure • Tech Debt Mitigation</span>
           <span className="text-sm text-white/50">Available for advisory & fractional leadership</span>
         </div>
 
@@ -25,8 +49,8 @@ export default function Home() {
           Senior AI & Full-Stack engineer focused on production-ready
           architectures, efficient LLM and RAG systems, and delightful user flows.
           I engineer resilient, multi-tenant AI systems, agentic workflow architectures, and deep data pipelines. 
-      Partnering as an elite technical asset for select venture-backed startups and premium engineering teams, 
-      I clear critical roadmap blocks, audit infrastructure, and scale ideas into production-ready digital capital.
+          Partnering as an elite technical asset for select venture-backed startups and premium engineering teams, 
+          I clear critical roadmap blocks, audit infrastructure, and scale ideas into production-ready digital capital.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -41,7 +65,7 @@ export default function Home() {
             href="mailto:shaunmukherjee@proton.me"
             className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
           >
-            Email me
+            Initiate Enquiry
           </a>
 
           <a
@@ -49,6 +73,13 @@ export default function Home() {
             className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
           >
             Review Architectural Portfolio
+          </a>
+
+           <a
+            href="#retrospectives"
+            className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
+          >
+           Review Engineering Retrospectives
           </a>
         </div>
       </section>
@@ -62,10 +93,11 @@ export default function Home() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
             <h3 className="text-xl font-semibold">
-              🚀 MVP from zero → one
+              🚀 Product from zero → one
             </h3>
             <p className="mt-3 text-white/70">
               Turn ideas into scoped, buildable MVPs.
+              Partnering exclusively as an elite technical extension for venture-backed startups and premium enterprises.
               I handle architecture, stack selection,
               and hands-on delivery to get to market fast.
             </p>
@@ -117,6 +149,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ENGINEERING RETROSPECTIVES SECTION */}
+      <section className="mx-auto mt-32 max-w-5xl" id="retrospectives">
+        <h2 className="text-3xl font-semibold">
+          Engineering Retrospectives
+        </h2>
+        <p className="mt-4 max-w-2xl text-white/60">
+          Technical deep-dives, architectural decisions, and lessons learned from production systems.
+        </p>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+           <a 
+            href="https://www.indiehackers.com/post/from-fractional-cto-to-micro-saas-how-15-unbilled-hours-inspired-an-ai-shield-and-what-the-data-says-about-v2-2e2502281a" 
+            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/10"
+          >
+            <span className="text-2xl">⚡</span>
+            <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-300">From Fractional CTO to Micro-SaaS</h3>
+            <p className="mt-2 text-sm text-white/60">How 15 unbilled hours inspired an AI Shield</p>
+            <span className="mt-3 inline-block text-sm text-cyan-400/60 group-hover:text-cyan-300">Read more →</span>
+          </a>
+
+          <a 
+            href="#" 
+            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/10"
+          >
+            <span className="text-2xl">🏗️</span>
+            <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-300">Tech Debt Mitigation</h3>
+            <p className="mt-2 text-sm text-white/60">How we reduced legacy system complexity by 60% while maintaining velocity</p>
+            <span className="mt-3 inline-block text-sm text-cyan-400/60 group-hover:text-cyan-300">Read more →</span>
+          </a>
+
+         
+        </div>
+      </section>
+
       {/* PROJECTS */}
       <section
         id="projects"
@@ -157,7 +224,7 @@ export default function Home() {
             <h3 className="text-xl font-bold text-white">VP Engineering & AI Tech Lead — Footura AI</h3>
             <p className="text-sm text-white/50">Mar 2024 — Present</p>
             <p className="mt-3 text-white/70">
-              Architected and scaled AI coaching platform using Next.js, NestJS, and LLMs. 
+              Architected and scaled AI coaching platform for both web and mobile using React Native, Swift/Kotlin, Next.js, NestJS, and LLMs. 
               Reduced latency by 30% and increased engagement by 40%.
             </p>
           </div>
@@ -223,9 +290,11 @@ export default function Home() {
               Good fit if you’re:
             </h3>
             <ul className="mt-4 space-y-2 text-white/70">
-              <li>• A founder building or validating an MVP</li>
-              <li>• A startup needing senior technical judgement</li>
-              <li>• A team applying AI beyond simple chatbots</li>
+                 <li>• A founder building or validating an AI MVP</li>
+        <li>• An agency or dev shop battling scope creep and unbilled hours</li>
+        <li>• A startup needing senior technical judgement and architecture audits</li>
+        <li>• A team applying AI beyond simple chatbots — RAG, agentic workflows, or infrastructure</li>
+        <li>• Frustrated by tool fragmentation and manual operational drag</li>
             </ul>
           </div>
 
@@ -234,8 +303,10 @@ export default function Home() {
               Probably not a fit if:
             </h3>
             <ul className="mt-4 space-y-2 text-white/70">
-              <li>• You’re looking for the cheapest dev</li>
-              <li>• You already have a large in-house team</li>
+               <li>• Looking for the cheapest development resource</li>
+        <li>• Already have a large, established in-house engineering team</li>
+        <li>• Not experiencing pain from scope creep or technical debt</li>
+        <li>• Building simple brochureware or static sites</li>
             </ul>
           </div>
         </div>
