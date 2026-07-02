@@ -16,11 +16,11 @@ export default function Home() {
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-lg">⚡</span>
               <div>
                 <span className="text-sm font-medium text-cyan-300">Beta Access</span>
-                <p className="text-sm text-white/70">Automated Risk & Scope Radar MVP</p>
+                <p className="text-sm text-white/70">scope-shield v2</p>
               </div>
             </div>
             <a
-              href="https://client-call-deliverables-engine.vercel.app/app"
+              href="https://scope-shield-v2.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-cyan-500/20 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/30 hover:text-cyan-200"
@@ -35,7 +35,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center pt-12">
         <div className="mb-6 inline-flex items-center gap-3">
-          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Principal AI Architect • RAG Infrastructure • Tech Debt Mitigation</span>
+          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Launch your AI startup with a Founding CTO. Not just another engineer.</span>
           <span className="text-sm text-white/50">Available for advisory & fractional leadership</span>
         </div>
 
@@ -55,10 +55,10 @@ export default function Home() {
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
            <a
-            href="https://calendly.com/shaunmukherjee-proton/30min"
+            href="https://calendly.com/shaunmukherjee-proton/15min"
             className="rounded-xl animate-gradient px-7 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:translate-y-[-1px] hover:shadow-indigo-500/40"
           >
-            Retain as Technical Advisor
+            Book a Discovery Call
           </a>
 
           <a
@@ -93,7 +93,7 @@ export default function Home() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
             <h3 className="text-xl font-semibold">
-              🚀 Product from zero → one
+              🚀 MVP Planning & Hands-On Development
             </h3>
             <p className="mt-3 text-white/70">
               Turn ideas into scoped, buildable MVPs.
@@ -105,7 +105,7 @@ export default function Home() {
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
             <h3 className="text-xl font-semibold">
-              🧠 AI strategy & architecture
+              🧠 AI Architecture & Product Roadmap
             </h3>
             <p className="mt-3 text-white/70">
              Transitioning complex technical concepts from zero to a robust production roadmap. I drive system 
@@ -281,7 +281,7 @@ export default function Home() {
       {/* WHO IT'S FOR */}
       <section className="mx-auto mt-32 max-w-5xl">
         <h2 className="text-3xl font-semibold">
-          Who I work best with
+          Who It's For
         </h2>
 
         <div className="mt-8 grid gap-8 sm:grid-cols-2">
@@ -293,7 +293,7 @@ export default function Home() {
                  <li>• A founder building or validating an AI MVP</li>
         <li>• An agency or dev shop battling scope creep and unbilled hours</li>
         <li>• A startup needing senior technical judgement and architecture audits</li>
-        <li>• A team applying AI beyond simple chatbots — RAG, agentic workflows, or infrastructure</li>
+        <li>• A team applying AI beyond simple chatbots — LLM, RAG, agentic workflows, or GenAI infrastructure</li>
         <li>• Frustrated by tool fragmentation and manual operational drag</li>
             </ul>
           </div>

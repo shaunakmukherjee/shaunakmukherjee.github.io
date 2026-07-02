@@ -46,11 +46,11 @@ export default function Navbar() {
           </a>
 
           <a
-            href="https://calendly.com/shaunmukherjee-proton/30min"
-            className="rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-300 transition hover:bg-indigo-500/20"
-          >
-            Available for work
-          </a>
+  href="https://calendly.com/shaunmukherjee-proton/15min"
+  className="rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:translate-y-[-1px] hover:shadow-cyan-500/40"
+>
+  Hire Me as Your Founding CTO
+</a>
         </div>
       </nav>
     </header>
