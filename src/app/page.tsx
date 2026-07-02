@@ -8,34 +8,66 @@ export default function Home() {
       {/* Background glow */}
       <div className="pointer-events-none absolute -top-32 left-1/2 h-[520px] w-[980px] -translate-x-1/2 bg-gradient-to-br from-cyan-400/20 via-pink-400/8 to-transparent blur-3xl" />
 
-      {/* RISK & SCOPE RADAR CALLOUT - TOP OF PAGE */}
-      <div className="relative mx-auto max-w-5xl pt-16">
-        <div className="rounded-2xl border border-cyan-400/30 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-cyan-950/40 p-4 backdrop-blur-sm">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-lg">⚡</span>
-              <div>
-                <span className="text-sm font-medium text-cyan-300">Beta Access</span>
-                <p className="text-sm text-white/70">scope-shield v2</p>
-              </div>
-            </div>
-            <a
-              href="https://scope-shield-v2.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-cyan-500/20 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/30 hover:text-cyan-200"
-            >
-              👉 Try for Free
-              <span className="text-cyan-400">→</span>
-            </a>
-          </div>
+     {/* TOOL CALLOUTS - MOBILE OPTIMIZED */}
+<div className="relative mx-auto max-w-5xl space-y-2 pt-12 sm:pt-16 mt-8">
+  {/* Scope Shield */}
+  <div className="rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-cyan-950/40 p-3 backdrop-blur-sm sm:rounded-2xl sm:p-4">
+    <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center gap-2 sm:gap-3">
+        <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-sm sm:h-8 sm:w-8 sm:text-lg">⚡</span>
+        <div>
+          <p className="text-[10px] text-white/50 sm:text-sm">beta-access</p>
+          <span className="text-xs font-medium text-cyan-300 sm:text-sm">ScopeShield V2</span>
+          <p className="hidden text-xs text-white/70 sm:block sm:text-sm">AI that flags scope creep in client calls. Protect your velocity and margins.</p>
         </div>
       </div>
+      <a
+        href="https://scope-shield-v2.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="shrink-0 rounded-lg bg-cyan-500/20 px-3 py-1.5 text-xs font-semibold text-cyan-300 transition hover:bg-cyan-500/30 hover:text-cyan-200 sm:rounded-xl sm:px-5 sm:py-2.5 sm:text-sm"
+      >
+        <span className="sm:inline">👉 Try for Free →</span>
+    
+      </a>
+    </div>
+    {/* Mobile-only description */}
+    <p className="mt-1.5 text-[11px] text-white/60 sm:hidden">AI that flags scope creep in client calls.</p>
+  </div>
+
+  {/* RepoDrift */}
+  <div className="rounded-xl border border-indigo-400/20 bg-gradient-to-r from-indigo-950/30 via-slate-900/50 to-indigo-950/30 p-3 backdrop-blur-sm transition hover:border-indigo-400/40 sm:rounded-2xl sm:p-4">
+    <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center gap-2 sm:gap-3">
+        <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-400 text-sm sm:h-8 sm:w-8 sm:text-lg">🔍</span>
+        <div>
+          <p className="text-[10px] text-white/50 sm:text-sm">open-source</p>
+          <span className="text-xs font-medium text-indigo-300 sm:text-sm">RepoDrift</span>
+          <p className="hidden text-xs text-white/70 sm:block sm:text-sm">Zero-config CLI, Git repository health analyzer</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-1.5 sm:gap-3">
+       
+        <a
+          href="https://github.com/shaunakmukherjee/repo-drift"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 rounded-lg bg-indigo-500/15 px-3 py-1.5 text-xs font-medium text-indigo-300 transition hover:bg-indigo-500/25 hover:text-indigo-200 sm:rounded-xl sm:px-5 sm:py-2.5 sm:text-sm"
+        >
+          <span className="sm:inline">⭐ Star on GitHub→</span>
+         
+        </a>
+      </div>
+    </div>
+    {/* Mobile-only description */}
+    <p className="mt-1.5 text-[11px] text-white/60 sm:hidden">Zero-config Git health analyzer</p>
+  </div>
+</div>
 
       {/* HERO */}
       <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center pt-12">
         <div className="mb-6 inline-flex items-center gap-3">
-          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Launch your AI startup with a Founding CTO. Not just another engineer.</span>
+          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Supercharge your AI startup with a Fractional CTO</span>
           <span className="text-sm text-white/50">Available for advisory & fractional leadership</span>
         </div>
 
@@ -46,7 +78,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-          Senior AI & Full-Stack engineer focused on production-ready
+          Principal AI & Full-Stack engineer focused on production-ready
           architectures, efficient LLM and RAG systems, and delightful user flows.
           I engineer resilient, multi-tenant AI systems, agentic workflow architectures, and deep data pipelines. 
           Partnering as an elite technical asset for select venture-backed startups and premium engineering teams, 
@@ -55,7 +87,7 @@ export default function Home() {
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
            <a
-            href="https://calendly.com/shaunmukherjee-proton/15min"
+            href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call"
             className="rounded-xl animate-gradient px-7 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:translate-y-[-1px] hover:shadow-indigo-500/40"
           >
             Book a Discovery Call

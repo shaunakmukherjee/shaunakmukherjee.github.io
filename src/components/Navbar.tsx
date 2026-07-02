@@ -46,7 +46,7 @@ export default function Navbar() {
           </a>
 
           <a
-  href="https://calendly.com/shaunmukherjee-proton/15min"
+  href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call"
   className="rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:translate-y-[-1px] hover:shadow-cyan-500/40"
 >
   Hire Me as Your Founding CTO
