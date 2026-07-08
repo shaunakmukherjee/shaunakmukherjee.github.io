@@ -10,19 +10,19 @@ export default function Home() {
 
      {/* TOOL CALLOUTS - MOBILE OPTIMIZED */}
 <div className="relative mx-auto max-w-5xl space-y-2 pt-12 sm:pt-16 mt-8">
-  {/* Scope Shield */}
+  {/* Scoply */}
   <div className="rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-cyan-950/40 p-3 backdrop-blur-sm sm:rounded-2xl sm:p-4">
     <div className="flex items-center justify-between gap-2">
       <div className="flex items-center gap-2 sm:gap-3">
         <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-sm sm:h-8 sm:w-8 sm:text-lg">⚡</span>
         <div>
           <p className="text-[10px] text-white/50 sm:text-sm">beta-access</p>
-          <span className="text-xs font-medium text-cyan-300 sm:text-sm">ScopeShield V2</span>
+          <span className="text-xs font-medium text-cyan-300 sm:text-sm">Scoply</span>
           <p className="hidden text-xs text-white/70 sm:block sm:text-sm">AI that flags scope creep in client calls. Protect your velocity and margins.</p>
         </div>
       </div>
       <a
-        href="https://scope-shield-v2.vercel.app/"
+        href="https://scoply-v2.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
         className="shrink-0 rounded-lg bg-cyan-500/20 px-3 py-1.5 text-xs font-semibold text-cyan-300 transition hover:bg-cyan-500/30 hover:text-cyan-200 sm:rounded-xl sm:px-5 sm:py-2.5 sm:text-sm"
@@ -203,12 +203,12 @@ export default function Home() {
           </a>
 
           <a 
-            href="#" 
+            href="https://www.indiehackers.com/post/its-live-i-turned-my-1-900-scope-creep-problem-into-a-product-iacD27k8eoY3SGw0ZKqE" 
             className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/10"
           >
             <span className="text-2xl">🏗️</span>
-            <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-300">Tech Debt Mitigation</h3>
-            <p className="mt-2 text-sm text-white/60">How we reduced legacy system complexity by 60% while maintaining velocity</p>
+            <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-300">Journey to building Scoply</h3>
+            <p className="mt-2 text-sm text-white/60">How feedback from v1 inspired a new product that investors love</p>
             <span className="mt-3 inline-block text-sm text-cyan-400/60 group-hover:text-cyan-300">Read more →</span>
           </a>
 
