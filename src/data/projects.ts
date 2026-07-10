@@ -1,6 +1,15 @@
 // src/data/projects.ts
 export const projects = [
   {
+    title : "Scoply",
+    description: "Agentic scope creep defense for agencies, freelancers & SaaS teams",
+    outcome: "Scoply scans client comms, flags unbilled work & writes the email that gets you paid for it. All in 8 seconds.",
+    image: "/projects/scoply-2.png",
+    link: "https://scoply-v2.vercel.app/",
+    stack: ["Next.js", "Python", "LLM", "FastAPI", "Postgres"],
+
+  },
+  {
     title: "YourLume",
     description: "An AI research and study suite designed to streamline data ingestion and provide intelligent insights.",
     outcome: "Users can upload documents, which are processed through AI pipelines to generate summaries, insights, and visualizations",

@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ProjectCard"
+import AnimatedStats from "@/components/AnimatedStats"
 import { projects } from "@/data/projects"
 import Footer from "@/components/Footer"
 
@@ -92,6 +93,13 @@ export default function Home() {
           >
             Book a Discovery Call
           </a>
+      
+          <a
+            href="#product-playbook"
+            className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
+          >
+            Get My Toolkit for Founders
+          </a>
 
           <a
             href="mailto:shaunmukherjee@proton.me"
@@ -115,6 +123,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <AnimatedStats />
 
       {/* HOW I WORK */}
       <section className="mx-auto mt-32 max-w-5xl" id="howiwork">
@@ -244,6 +254,152 @@ export default function Home() {
             />
           ))}
         </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="mx-auto mt-32 max-w-5xl" id="testimonials">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-3xl font-semibold">Trusted by founders and operators</h2>
+            <p className="mt-4 max-w-2xl text-white/60">
+              Verified technical partnership feedback from clients who needed senior product and architecture leadership under pressure.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <p className="text-lg leading-relaxed text-white/75">
+              “Consistently demonstrated strong competency, thoughtful problem-solving, and a deep sense of ownership... <strong className="font-semibold text-white">He doesn’t operate like a transactional contractor. He thinks like a builder.</strong> He asks all the right questions, anticipates challenges, and considers long-term sustainability...”
+            </p>
+            <div className="mt-6 border-t border-white/10 pt-4">
+              <p className="font-semibold text-white">Lou</p>
+              <p className="mt-1 text-sm text-cyan-300/80">Founder, SoulSource</p>
+              <p className="mt-1 text-sm text-white/50">Verified via Upwork</p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <p className="text-lg leading-relaxed text-white/75">
+              “<strong className="font-semibold text-white">Shaun conducted a thorough evaluation of our product and clearly communicated areas that required improvement.</strong> He worked closely with us every step of the way... His professionalism, technical expertise, and outstanding attitude set him apart.”
+            </p>
+            <div className="mt-6 border-t border-white/10 pt-4">
+              <p className="font-semibold text-white">Kamdi</p>
+              <p className="mt-1 text-sm text-cyan-300/80">Founder, Kedai</p>
+              <p className="mt-1 text-sm text-white/50">Verified via Upwork</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  {/* PRODUCT PLAYBOOK CTA */}
+      <section className="mx-auto mt-32 max-w-5xl px-4 sm:px-6" id="product-playbook">
+        <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/40 p-8 shadow-2xl shadow-indigo-950/40 backdrop-blur sm:p-12">
+          
+          {/* Subtle Glow Accents */}
+          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+          <div className="absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-pink-500/10 blur-3xl pointer-events-none" />
+
+          <div className="max-w-3xl relative z-10">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-400 border border-cyan-400/20">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              AkShaun's Digital Toolkit
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              The Founder's Technical Roadmap Toolkit
+            </h2>
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-300">
+              A practical, plain-English system for turning a rough product idea into a clear technical roadmap — built from real conversations with founders and investors, not theory. No coding background needed.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch relative z-10">
+            
+            {/* The Deliverables List */}
+            <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-slate-950/60 p-6 sm:p-8 backdrop-blur-sm">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">What's inside:</p>
+                <ul className="space-y-5 text-sm text-slate-300">
+                  <li className="flex items-start gap-3">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-bold">✓</span>
+                    <div>
+                      <strong className="text-white block font-medium">The Roadmapping Template</strong>
+                      <span className="text-slate-400 text-xs">A step-by-step framework for turning a messy idea into a clear, structured technical plan — the same process I use with founders before anything gets built.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-pink-500/10 text-pink-400 text-xs font-bold">✓</span>
+                    <div>
+                      <strong className="text-white block font-medium">Plain-English Architecture References</strong>
+                      <span className="text-slate-400 text-xs">Simple system diagrams you can hand to any engineer — or use yourself — to explain how the pieces of your product fit together.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-bold">✓</span>
+                    <div>
+                      <strong className="text-white block font-medium">The Scoping & Milestone Playbook</strong>
+                      <span className="text-slate-400 text-xs">A straightforward way to break a build into milestones, price them fairly, and avoid scope creep — whether you're hiring an engineer or building it yourself.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="mt-6 pt-4 border-t border-white/5 flex flex-wrap gap-3 items-center text-xs text-slate-400">
+                <span>Includes formats:</span>
+                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Notion Workspace</span>
+                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Figma/Excalidraw PNGs</span>
+                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Markdown Files</span>
+              </div>
+            </div>
+
+            {/* The Buy Box Card — two tiers */}
+            <div className="flex flex-col gap-4">
+
+              {/* Tier 1: Roadmap only */}
+              <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-950/60 p-6 text-center lg:text-left">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">Roadmap only</span>
+                  <div className="mt-2 flex items-baseline justify-center lg:justify-start gap-2">
+                    <span className="text-3xl font-extrabold text-white tracking-tight">$29</span>
+                  </div>
+                  <p className="mt-2 text-xs text-slate-400">
+                    The roadmapping template + framework. Good if you just need a clear plan.
+                  </p>
+                </div>
+                <a
+                  href="https://akshaun.gumroad.com/subscribe" 
+                  className="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/5"
+                >
+                  Get the roadmap
+                </a>
+              </div>
+
+              {/* Tier 2: Roadmap + Templates */}
+              <div className="flex flex-col justify-between rounded-2xl border border-cyan-500/30 bg-gradient-to-b from-slate-950 to-cyan-950/20 p-6 text-center lg:text-left">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Everything, all included</span>
+                  <div className="mt-2 flex items-baseline justify-center lg:justify-start gap-2">
+                    <span className="text-3xl font-extrabold text-white tracking-tight">$69</span>
+                  </div>
+                  <p className="mt-2 text-xs text-slate-300">
+                    Roadmap template, architecture references, and the scoping/milestone playbook — the full toolkit.
+                  </p>
+                </div>
+                <a
+                  href="https://akshaun.gumroad.com/subscribe"
+                  className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-xl shadow-cyan-500/10 transition hover:opacity-95 hover:scale-[1.01] active:scale-[0.99]"
+                >
+                  Get the full toolkit
+                </a>
+              </div>
+
+              <p className="text-[10px] text-center text-slate-400">
+                Secure checkout via Gumroad · Built for non-technical founders, solo builders, and small teams who need a clear technical plan without hiring a full-time CTO.
+              </p>
+            </div>
+
+          </div>
+          </div>
       </section>
 
      {/* EXPERIENCE SECTION */}
