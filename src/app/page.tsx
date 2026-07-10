@@ -313,6 +313,23 @@ export default function Home() {
             </p>
           </div>
 
+{/* FREE RESOURCE - NEW */}
+    <div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/60 p-6 sm:p-8">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold">FREE</span>
+        <span className="text-sm font-semibold text-emerald-400">Starter Resource</span>
+      </div>
+      <h3 className="text-xl font-semibold text-white">Real AI Roadmap That Got Me Hired as Fractional CTO</h3>
+      <p className="mt-2 text-slate-300">
+        The exact client roadmap I delivered that led to a Fractional CTO engagement. Full Notion template + architecture + milestones.
+      </p>
+      <a
+        href="https://akshaun.gumroad.com/l/roadmap-which-got-me-hired"
+        className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/50 px-6 py-3 font-semibold text-emerald-400 hover:bg-emerald-900/50 transition"
+      >
+        Get the free roadmap →
+      </a>
+    </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch relative z-10">
             
             {/* The Deliverables List */}

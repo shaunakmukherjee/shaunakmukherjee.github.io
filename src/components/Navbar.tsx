@@ -44,13 +44,20 @@ export default function Navbar() {
           >
             Projects
           </a>
+<a
+    href="#product-playbook"
+    className="rounded-xl border border-slate-200 bg-white/50 px-5 py-2.5 text-sm font-semibold text-slate-700 backdrop-blur-sm transition-all duration-200 hover:border-slate-300 hover:bg-white hover:text-slate-900 hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/50 dark:text-slate-300 dark:hover:border-slate-700 dark:hover:bg-slate-900 dark:hover:text-white"
+  >
+    Get My Playbook
+  </a>
 
-          <a
-  href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call"
-  className="rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:translate-y-[-1px] hover:shadow-cyan-500/40"
->
-  Hire Me as Your Founding CTO
-</a>
+  {/* Primary CTA: Book a Call */}
+  <a
+    href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call"
+    className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all duration-200 hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-200"
+  >
+    Book a Call
+  </a>
         </div>
       </nav>
     </header>
