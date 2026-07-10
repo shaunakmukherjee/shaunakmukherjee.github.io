@@ -306,112 +306,113 @@ export default function Home() {
               AkShaun's Digital Toolkit
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              The Founder's Technical Roadmap Toolkit
+              Plan Your Startup Before You Spend $20k Building It
             </h2>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-300">
-              A practical, plain-English system for turning a rough product idea into a clear technical roadmap — built from real conversations with founders and investors, not theory. No coding background needed.
+              Stop guessing what to build first. Learn how to turn your idea into a roadmap developers can build, investors understand, and you can confidently budget for—without hiring a full-time CTO.
             </p>
           </div>
 
-{/* FREE RESOURCE - NEW */}
-    <div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/60 p-6 sm:p-8">
-      <div className="flex items-center gap-3 mb-3">
-        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold">FREE</span>
-        <span className="text-sm font-semibold text-emerald-400">Starter Resource</span>
-      </div>
-      <h3 className="text-xl font-semibold text-white">Real AI Roadmap That Got Me Hired as Fractional CTO</h3>
-      <p className="mt-2 text-slate-300">
-        The exact client roadmap I delivered that led to a Fractional CTO engagement. Full Notion template + architecture + milestones.
-      </p>
-      <a
-        href="https://akshaun.gumroad.com/l/roadmap-which-got-me-hired"
-        className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/50 px-6 py-3 font-semibold text-emerald-400 hover:bg-emerald-900/50 transition"
-      >
-        Get the free roadmap →
-      </a>
-    </div>
+
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch relative z-10">
             
             {/* The Deliverables List */}
             <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-slate-950/60 p-6 sm:p-8 backdrop-blur-sm">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">What's inside:</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Here's what you'll be able to do</p>
                 <ul className="space-y-5 text-sm text-slate-300">
                   <li className="flex items-start gap-3">
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-bold">✓</span>
                     <div>
-                      <strong className="text-white block font-medium">The Roadmapping Template</strong>
-                      <span className="text-slate-400 text-xs">A step-by-step framework for turning a messy idea into a clear, structured technical plan — the same process I use with founders before anything gets built.</span>
+                      <strong className="text-white block font-medium">Know exactly what to build first</strong>
+                      <span className="text-slate-400 text-xs">Turn scattered ideas into a roadmap that reduces wasted development time, prevents expensive rebuilds, and gives developers a clear plan from day 1.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-pink-500/10 text-pink-400 text-xs font-bold">✓</span>
                     <div>
-                      <strong className="text-white block font-medium">Plain-English Architecture References</strong>
-                      <span className="text-slate-400 text-xs">Simple system diagrams you can hand to any engineer — or use yourself — to explain how the pieces of your product fit together.</span>
+                      <strong className="text-white block font-medium">Explain your product like a CTO </strong>
+                      <span className="text-slate-400 text-xs">Professional architecture diagrams you can confidently share with developers, investors, and co-founders—even if you aren't technical.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-bold">✓</span>
                     <div>
-                      <strong className="text-white block font-medium">The Scoping & Milestone Playbook</strong>
-                      <span className="text-slate-400 text-xs">A straightforward way to break a build into milestones, price them fairly, and avoid scope creep — whether you're hiring an engineer or building it yourself.</span>
+                      <strong className="text-white block font-medium">Avoid overpriced developer quotes</strong>
+                      <span className="text-slate-400 text-xs">Learn how experienced CTOs scope projects, estimate realistic budgets, and structure milestones so you don't overpay or lose control of your MVP.</span>
                     </div>
                   </li>
                 </ul>
               </div>
               
+              <div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/60 p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold">FREE</span>
+                  <span className="text-sm font-semibold text-emerald-400">Starter Resource</span>
+                </div>
+                <h3 className="text-xl font-semibold text-white">See What a Real CTO Roadmap Looks Like</h3>
+                <p className="mt-2 text-slate-300">
+                  Download the actual roadmap used with an AI agency.
+                </p>
+                <a
+                  href="https://akshaun.gumroad.com/l/roadmap-which-got-me-hired"
+                  className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/50 px-6 py-3 font-semibold text-emerald-400 hover:bg-emerald-900/50 transition"
+                >
+                  Download Free Sample →
+                </a>
+              </div>
+              
               <div className="mt-6 pt-4 border-t border-white/5 flex flex-wrap gap-3 items-center text-xs text-slate-400">
-                <span>Includes formats:</span>
-                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Notion Workspace</span>
-                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Figma/Excalidraw PNGs</span>
-                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Markdown Files</span>
+                <span>Perfect if you're:</span>
+                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Planning your MVP</span>
+                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Stuck at &lt;$3k MRR</span>
+                <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Preparing for investors</span>
               </div>
             </div>
 
             {/* The Buy Box Card — two tiers */}
             <div className="flex flex-col gap-4">
-
               {/* Tier 1: Roadmap only */}
               <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-950/60 p-6 text-center lg:text-left">
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">Roadmap only</span>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">MVP Roadmapping Kit</span>
                   <div className="mt-2 flex items-baseline justify-center lg:justify-start gap-2">
                     <span className="text-3xl font-extrabold text-white tracking-tight">$29</span>
                   </div>
                   <p className="mt-2 text-xs text-slate-400">
-                    The roadmapping template + framework. Good if you just need a clear plan.
-                  </p>
-                </div>
-                <a
-                  href="https://akshaun.gumroad.com/subscribe" 
-                  className="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/5"
-                >
-                  Get the roadmap
-                </a>
-              </div>
-
-              {/* Tier 2: Roadmap + Templates */}
-              <div className="flex flex-col justify-between rounded-2xl border border-cyan-500/30 bg-gradient-to-b from-slate-950 to-cyan-950/20 p-6 text-center lg:text-left">
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Everything, all included</span>
-                  <div className="mt-2 flex items-baseline justify-center lg:justify-start gap-2">
-                    <span className="text-3xl font-extrabold text-white tracking-tight">$69</span>
-                  </div>
-                  <p className="mt-2 text-xs text-slate-300">
-                    Roadmap template, architecture references, and the scoping/milestone playbook — the full toolkit.
+                   Everything you need to define your MVP before thinking about distribution / dev work.
                   </p>
                 </div>
                 <a
                   href="https://akshaun.gumroad.com/subscribe"
                   className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-xl shadow-cyan-500/10 transition hover:opacity-95 hover:scale-[1.01] active:scale-[0.99]"
                 >
-                  Get the full toolkit
+                 Start Planning My MVP
                 </a>
               </div>
 
+              {/* Tier 2: Roadmap + Templates */}
+              <div className="flex flex-col justify-between rounded-2xl border border-cyan-500/30 bg-gradient-to-b from-slate-950 to-cyan-950/20 p-6 text-center lg:text-left">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Founder CTO Toolkit</span>
+                  <div className="mt-2 flex items-baseline justify-center lg:justify-start gap-2">
+                    <span className="text-3xl font-extrabold text-white tracking-tight">$69</span>
+                  </div>
+                  <p className="mt-2 text-xs text-slate-300">
+                   Everything you'd normally work through with a fractional CTO before spending $$$ on development.
+                  </p>
+                </div>
+                <a
+                  href="https://akshaun.gumroad.com/subscribe"
+                  className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-xl shadow-cyan-500/10 transition hover:opacity-95 hover:scale-[1.01] active:scale-[0.99]"
+                >
+                 Get the COMPLETE Toolkit
+                </a>
+              </div>
+
+
               <p className="text-[10px] text-center text-slate-400">
-                Secure checkout via Gumroad · Built for non-technical founders, solo builders, and small teams who need a clear technical plan without hiring a full-time CTO.
+                Secure checkout via Gumroad · Most startups waste thousands building the wrong MVP first. This toolkit helps you avoid becoming one of them.
               </p>
             </div>
 
