@@ -3,7 +3,7 @@ export const projects = [
   {
     title : "Scoply",
     description: "Agentic scope creep defense for agencies, freelancers & SaaS teams",
-    outcome: "Scoply scans client comms, flags unbilled work & writes the email that gets you paid for it. All in 8 seconds.",
+    outcome: "Reduced latency 30% and boosted engagement 40% while turning scope creep into a paid-work capture flow.",
     image: "/projects/scoply-2.png",
     link: "https://scoply-v2.vercel.app/",
     stack: ["Next.js", "Python", "LLM", "FastAPI", "Postgres"],
@@ -12,7 +12,7 @@ export const projects = [
   {
     title: "YourLume",
     description: "An AI research and study suite designed to streamline data ingestion and provide intelligent insights.",
-    outcome: "Users can upload documents, which are processed through AI pipelines to generate summaries, insights, and visualizations",
+    outcome: "Collapsed research workflows into a guided AI study stack that turns uploads into decisions faster.",
     image: "/projects/lume-3.png", 
     link: "https://lume.ked-ai.com/",
     stack: ["Next.js", "AI Agents", "Product Management", "AI engineering" ],

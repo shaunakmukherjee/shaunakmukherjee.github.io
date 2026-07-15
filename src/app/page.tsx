@@ -68,23 +68,14 @@ export default function Home() {
       {/* HERO */}
       <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center pt-12">
         <div className="mb-6 inline-flex items-center gap-3">
-          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Supercharge your AI startup with a Fractional CTO</span>
+          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Book a Discovery Call for elite technical leverage</span>
           <span className="text-sm text-white/50">Available for advisory & fractional leadership</span>
         </div>
 
-        <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-6xl">
-          I partner with <span className="animate-gradient">select founders</span> to architect
-          <span className="animate-gradient"> AI products</span>
-          <br className="hidden sm:block" /> that users love and investors understand.
-        </h1>
+        <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-6xl">Shaun - Principal AI Architect & Fractional CTO</h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-          Principal AI & Full-Stack engineer focused on production-ready
-          architectures, efficient LLM and RAG systems, and delightful user flows.
-          I engineer resilient, multi-tenant AI systems, agentic workflow architectures, and deep data pipelines. 
-          Partnering as an elite technical asset for select venture-backed startups and premium engineering teams, 
-          I clear critical roadmap blocks, audit infrastructure, and scale ideas into production-ready digital capital.
-        </p>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">I partner with select founders to turn AI ideas into production systems that users love and investors fund.<br className="hidden sm:block" /> Clear roadmaps, production-grade architectures (LLM/RAG/agentic), and hands-on delivery without the full-time hire.</p>
+
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
            <a
@@ -128,66 +119,40 @@ export default function Home() {
 
       {/* HOW I WORK */}
       <section className="mx-auto mt-32 max-w-5xl" id="howiwork">
-        <h2 className="text-3xl font-semibold">
-          How I work with founders
-        </h2>
-
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <h2 className="text-3xl font-semibold">How I Work With Founders - Three Clear Levels</h2>
+        <p className="mt-4 max-w-3xl text-white/60">I structure engagements so you get clarity fast, ongoing leverage when needed, and full production systems when you're ready.</p>
+        <div className="mt-10 grid gap-6">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <h3 className="text-xl font-semibold">
-              🚀 MVP Planning & Hands-On Development
-            </h3>
-            <p className="mt-3 text-white/70">
-              Turn ideas into scoped, buildable MVPs.
-              Partnering exclusively as an elite technical extension for venture-backed startups and premium enterprises.
-              I handle architecture, stack selection,
-              and hands-on delivery to get to market fast.
-            </p>
+            <h3 className="text-xl font-semibold">Level 1: Technical Clarity Package</h3>
+            <p className="mt-2 text-sm font-medium text-cyan-300">Entry point for most founders</p>
+            <p className="mt-3 text-white/70">Turn vague ideas into a scoped, investor-ready plan. Includes structured interview, MVP/technical roadmap, architecture audit, risk assessment, and prioritized build guidance.</p>
+            <p className="mt-3 text-sm text-white/55">Typical investment: $1.5k-$4k. Best for pre-seed / validating founders who want to avoid expensive mistakes.</p>
           </div>
-
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <h3 className="text-xl font-semibold">
-              🧠 AI Architecture & Product Roadmap
-            </h3>
-            <p className="mt-3 text-white/70">
-             Transitioning complex technical concepts from zero to a robust production roadmap. I drive system 
-        design, decouple data access layers, eliminate performance bottlenecks, and establish highly optimized, 
-        cloud-native boilerplate foundations that scale linearly
-            </p>
+            <h3 className="text-xl font-semibold">Level 2: Fractional AI Architect Retainer</h3>
+            <p className="mt-3 text-white/70">Ongoing technical leadership (5-10 hrs/week). Roadmap ownership, architecture decisions, production reviews, agentic workflow implementation, and velocity protection.</p>
+            <p className="mt-3 text-sm text-white/55">Typical investment: $3.5k-$6k+/mo. Best for startups that need consistent senior judgment without a full-time VP.</p>
           </div>
-
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-white/20">
-      <h3 className="text-xl font-semibold text-white flex items-center gap-2">
-        <span>🏗️</span> Production-Grade AI Orchestration
-      </h3>
-      <p className="mt-3 text-sm leading-relaxed text-white/70">
-        Moving pipelines past basic stateless wrappers into production-ready system. Designing deterministic 
-        RAG pipelines, semantic indexing schemas, persistent multi-tenant context memory tracking, and isolated multi-step 
-        agentic workflows that never compromise synchronous application runtime.
-      </p>
-    </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <h3 className="text-xl font-semibold">
-              🛠️ Fractional technical leadership
-            </h3>
-            <p className="mt-3 text-white/70">
-              Act as a senior tech lead or interim VP:
-              roadmap decisions, code reviews, system
-              design, and early hiring guidance.
-            </p>
+            <h3 className="text-xl font-semibold text-white">Level 3: Production AI System Build</h3>
+            <p className="mt-3 text-white/70">End-to-end architecture and implementation of production-grade AI systems (multi-agent orchestration, RAG platforms, scalable infrastructure).</p>
+            <p className="mt-3 text-sm text-white/55">Typical investment: $15k-$40k+ project or high-tier retainer. Best for funded teams ready to move from prototype to reliable production.</p>
           </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <h3 className="text-xl font-semibold">
-              💰 Fundraising & investor readiness
-            </h3>
-            <p className="mt-3 text-white/70">
-              Build products investors understand.
-              I have supported pitch decks, technical
-              narratives, and early fundraising conversations.
-            </p>
+          <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-6 backdrop-blur">
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-300">The ladder compounds</p>
+            <p className="mt-3 text-white/70">Most clients start at Level 1, move to Level 2 for leverage, and engage Level 3 when scaling the core product.</p>
+            <a href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call" className="mt-5 inline-flex rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:translate-y-[-1px]">Book a Discovery Call</a>
           </div>
+        </div>
+        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+          <h3 className="text-xl font-semibold">My Leveraged Delivery System</h3>
+          <p className="mt-3 text-white/70">I run my practice like a modern one-person company:</p>
+          <ul className="mt-4 space-y-2 text-white/65">
+            <li>- A personal AI operating system (Claude + structured skills folder) that handles research, drafting, auditing, and templating.</li>
+            <li>- Every repeatable process is skill-ified for consistency and speed.</li>
+            <li>- This lets me deliver at the level of a small team while maintaining senior judgment on every engagement.</li>
+          </ul>
+          <p className="mt-4 text-white/70">This is how I provide elite support to multiple founders without compromising quality.</p>
         </div>
       </section>
 
@@ -399,7 +364,8 @@ export default function Home() {
                     <span className="text-3xl font-extrabold text-white tracking-tight">$69</span>
                   </div>
                   <p className="mt-2 text-xs text-slate-300">
-                   Everything you'd normally work through with a fractional CTO before spending $$$ on development.
+                   Everything you'd work through with a fractional CTO before spending $$ on development.
+                  <p className="mt-3 text-xs text-cyan-300/80">Proof-first approach: I build public demos and architecture examples regularly. Many founders book calls after seeing a relevant pattern applied to their space.</p>
                   </p>
                 </div>
                 <a
@@ -522,3 +488,4 @@ export default function Home() {
     </main>
   )
 }
+
