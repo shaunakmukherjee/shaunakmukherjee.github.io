@@ -44,12 +44,7 @@ export default function Navbar() {
           >
             Projects
           </a>
-          <a
-            href="#product-playbook"
-            className="w-full rounded-xl border border-slate-200 bg-white/50 px-5 py-2.5 text-center text-sm font-semibold text-slate-700 backdrop-blur-sm transition-all duration-200 hover:border-slate-300 hover:bg-white hover:text-slate-900 hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/50 dark:text-slate-300 dark:hover:border-slate-700 dark:hover:bg-slate-900 dark:hover:text-white sm:w-auto"
-          >
-            Get My Playbook
-          </a>
+        
 
           {/* Primary CTA: Book a Call */}
           <a
