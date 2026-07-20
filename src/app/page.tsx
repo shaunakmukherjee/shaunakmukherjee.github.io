@@ -79,7 +79,7 @@ export default function Home() {
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
            <a
-            href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call"
+            href="https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun"
             className="rounded-xl animate-gradient px-7 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:translate-y-[-1px] hover:shadow-indigo-500/40"
           >
             Book a Discovery Call
