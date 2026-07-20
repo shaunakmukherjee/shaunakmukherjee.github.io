@@ -48,7 +48,7 @@ export default function Navbar() {
 
           {/* Primary CTA: Book a Call */}
           <a
-            href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call"
+            href="https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun"
             className="w-full rounded-xl bg-slate-900 px-5 py-2.5 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all duration-200 hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-900/20 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-200 sm:w-auto"
           >
             Book a Call
