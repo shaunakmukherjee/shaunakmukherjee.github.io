@@ -121,22 +121,22 @@ export default function Home() {
             <h3 className="text-xl font-semibold">Level 1: Technical Clarity Package</h3>
             <p className="mt-2 text-sm font-medium text-cyan-300">Entry point for most founders</p>
             <p className="mt-3 text-white/70">Turn vague ideas into a scoped, investor-ready plan. Includes structured interview, MVP/technical roadmap, architecture audit, risk assessment, and prioritized build guidance.</p>
-            <p className="mt-3 text-sm text-white/55">Typical investment: $1.5k-$4k. Best for pre-seed / validating founders who want to avoid expensive mistakes.</p>
+            <p className="mt-3 text-sm text-white/55">Best for pre-seed / validating founders who want to avoid expensive mistakes.</p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
             <h3 className="text-xl font-semibold">Level 2: Fractional AI Architect Retainer</h3>
             <p className="mt-3 text-white/70">Ongoing technical leadership (5-10 hrs/week). Roadmap ownership, architecture decisions, production reviews, agentic workflow implementation, and velocity protection.</p>
-            <p className="mt-3 text-sm text-white/55">Typical investment: $3.5k-$6k+/mo. Best for startups that need consistent senior judgment without a full-time VP.</p>
+            <p className="mt-3 text-sm text-white/55">Best for startups that need consistent senior judgment without a full-time VP.</p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-white/20">
             <h3 className="text-xl font-semibold text-white">Level 3: Production AI System Build</h3>
             <p className="mt-3 text-white/70">End-to-end architecture and implementation of production-grade AI systems (multi-agent orchestration, RAG platforms, scalable infrastructure).</p>
-            <p className="mt-3 text-sm text-white/55">Typical investment: $15k-$40k+ project or high-tier retainer. Best for funded teams ready to move from prototype to reliable production.</p>
+            <p className="mt-3 text-sm text-white/55">Best for funded teams ready to move from prototype to reliable production.</p>
           </div>
           <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-6 backdrop-blur">
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-300">The ladder compounds</p>
             <p className="mt-3 text-white/70">Most clients start at Level 1, move to Level 2 for leverage, and engage Level 3 when scaling the core product.</p>
-            <a href="https://calendly.com/shaunmukherjee-proton/founding-cto-discovery-call" className="mt-5 inline-flex rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:translate-y-[-1px]">Book a Discovery Call</a>
+            <a href="https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun" className="mt-5 inline-flex rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:translate-y-[-1px]">Book a Discovery Call</a>
           </div>
         </div>
         <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
