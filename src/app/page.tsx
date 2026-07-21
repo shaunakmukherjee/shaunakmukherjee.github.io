@@ -143,7 +143,7 @@ export default function Home() {
           <h3 className="text-xl font-semibold">My Leveraged Delivery System</h3>
           <p className="mt-3 text-white/70">I run my practice like a modern one-person company:</p>
           <ul className="mt-4 space-y-2 text-white/65">
-            <li>- A personal AI operating system (Claude + structured skills folder) that handles research, drafting, auditing, and templating.</li>
+            <li>- A personal AI operating system (Agentic infrastructure + structured skills folder) that handles research, drafting, auditing, and templating.</li>
             <li>- Every repeatable process is skill-ified for consistency and speed.</li>
             <li>- This lets me deliver at the level of a small team while maintaining senior judgment on every engagement.</li>
           </ul>
