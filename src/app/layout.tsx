@@ -14,7 +14,12 @@ export const metadata = {
   title: "Shaun — Principal AI Architect & Engineer",
   description:
     "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
-  openGraph: {
+  verification: {
+    other: {
+      'msvalidate.01': ['06AF66FADC8DBE65F9B264C90D3D37FE'],
+    },
+  },
+    openGraph: {
     title: "Shaun — Principal AI Engineer and Builder",
     description:
       "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
@@ -22,7 +27,7 @@ export const metadata = {
     siteName: "Shaun's Portfolio",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "Shaun — Principal AI Engineer and Builder",
@@ -35,7 +40,7 @@ export const metadata = {
     title: "Shaun — Principal AI Architect & Engineer",
     description:
       "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
 }
 

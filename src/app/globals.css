@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
-
-
 :root {
   --bg: 220 15% 8%; /* deep navy */
   --fg: 210 50% 96%; /* near white */
   --muted: 210 10% 60%;
   --accent: 175 85% 55%; /* teal accent */
   --accent-2: 320 85% 62%; /* magenta accent for contrast */
+  --accent-3: 235 85% 65%; /* indigo accent */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +16,19 @@
     --muted: 210 12% 66%;
   }
 }
+
 html {
   scroll-behavior: smooth;
+  /* keeps anchored headings clear of the sticky navbar */
+  scroll-padding-top: 6rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background-color: hsl(var(--bg));
   color: hsl(var(--fg));
+  /* NB: no `overflow-x: hidden` here — it would turn body into a scroll
+     container and break the sticky navbar. Page wrappers clip instead. */
 }
 
 /* gentle radial vignette to give unique landing tone */
@@ -36,15 +41,47 @@ body::before {
   mix-blend-mode: overlay;
 }
 
-/* Animated gradient text */
+/* ── Keyframes ─────────────────────────────────────────────────────── */
+
 @keyframes gradientFlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
+
+@keyframes auroraDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(4%, -3%, 0) scale(1.08); }
+  66% { transform: translate3d(-3%, 3%, 0) scale(0.96); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmerSweep {
+  0% { transform: translateX(-120%) skewX(-12deg); }
+  100% { transform: translateX(220%) skewX(-12deg); }
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.35); }
+  70% { box-shadow: 0 0 0 10px hsl(var(--accent) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0); }
+}
+
+@keyframes scrollCue {
+  0% { opacity: 0; transform: translateY(-6px); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+
+/* ── Animated gradient text (background-clip: text) ────────────────── */
 
 .animate-gradient {
   background: linear-gradient(
@@ -60,20 +97,151 @@ body::before {
   animation: gradientFlow 3s ease-in-out infinite;
 }
 
-/* Enhanced button animations */
-@keyframes buttonGlow {
-  0% {
-    box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+/* ── Animated gradient BACKGROUND (for buttons/surfaces) ───────────── */
+
+.animate-gradient-bg {
+  background-image: linear-gradient(
+    100deg,
+    hsl(var(--accent)) 0%,
+    hsl(var(--accent-3)) 35%,
+    hsl(var(--accent-2)) 65%,
+    hsl(var(--accent)) 100%
+  );
+  background-size: 220% auto;
+  animation: gradientFlow 6s ease-in-out infinite;
+}
+
+/* ── Reusable effect utilities ─────────────────────────────────────── */
+
+.aurora-blob {
+  animation: auroraDrift 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2.6s ease-out infinite;
+}
+
+.animate-scroll-cue {
+  animation: scrollCue 1.9s ease-in-out infinite;
+}
+
+/* light sweep across a surface on hover — pair with `group` + overflow-hidden */
+.sheen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.09),
+    transparent
+  );
+  transform: translateX(-120%) skewX(-12deg);
+  opacity: 0;
+}
+
+.group:hover .sheen::after,
+.sheen:hover::after {
+  opacity: 1;
+  animation: shimmerSweep 900ms ease-out;
+}
+
+/* gradient hairline border that lights up on hover */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  /* inset 0 (not -1px) so it survives an `overflow-hidden` parent */
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    130deg,
+    hsl(var(--accent) / 0.5),
+    hsl(var(--accent-3) / 0.25),
+    hsl(var(--accent-2) / 0.4)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+
+.glow-border:hover::before,
+.group:hover > .glow-border::before {
+  opacity: 1;
+}
+
+/* infinite ticker — the track must render its children twice */
+.marquee-track {
+  animation: marqueeScroll 38s linear infinite;
+  will-change: transform;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-mask:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ── Focus & scrollbar polish ──────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid hsl(var(--accent) / 0.8);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
   }
-  50% {
-    box-shadow: 0 0 16px rgba(99, 102, 241, 0.5);
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--bg));
   }
-  100% {
-    box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+  ::-webkit-scrollbar-thumb {
+    background: hsl(210 12% 26%);
+    border-radius: 999px;
+    border: 2px solid hsl(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.5);
   }
 }
 
-.btn-primary:hover {
-  animation: buttonGlow 1.5s ease-in-out;
-}
+/* ── Respect reduced-motion across every animation above ───────────── */
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-gradient {
+    /* keep the gradient, drop the motion */
+    background-position: 0% 50%;
+  }
+}

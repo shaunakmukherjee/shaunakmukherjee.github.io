@@ -1,12 +1,34 @@
 export type StatItem = {
-  label: string | null | undefined
+  /** Caption under the figure. */
+  label: string
   target: number
   prefix: string
+  /** Unit that sits tight against the figure, e.g. "M" or "k". */
   suffix: string
+  /** Decimal places held steady while the number counts up. */
+  decimals?: number
 }
 
 export const stats: StatItem[] = [
-  { target: 5, label : '1', prefix: "", suffix: " startups launched" },
-  { target: 17.5, label : '2', prefix: "$", suffix: " million raised in post-money cap" },
-  { target: 200, label : '3', prefix: "$", suffix: "k saved in engineering costs" },
+  {
+    target: 5,
+    prefix: "",
+    suffix: "",
+    decimals: 0,
+    label: "Startups launched",
+  },
+  {
+    target: 17.5,
+    prefix: "$",
+    suffix: "M",
+    decimals: 1,
+    label: "Raised in post-money cap",
+  },
+  {
+    target: 200,
+    prefix: "$",
+    suffix: "k",
+    decimals: 0,
+    label: "Saved in engineering costs",
+  },
 ]

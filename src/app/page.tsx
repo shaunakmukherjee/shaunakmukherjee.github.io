@@ -1,210 +1,418 @@
 import ProjectCard from "@/components/ProjectCard"
 import AnimatedStats from "@/components/AnimatedStats"
-import { projects } from "@/data/projects"
 import Footer from "@/components/Footer"
+import ToolCallouts from "@/components/ToolCallouts"
+import ExperienceTimeline, { type Role } from "@/components/ExperienceTimeline"
+import Aurora from "@/components/motion/Aurora"
+import Marquee from "@/components/motion/Marquee"
+import MagneticLink from "@/components/motion/MagneticLink"
+import SectionHeading from "@/components/motion/SectionHeading"
+import AnimatedHeading from "@/components/motion/AnimatedHeading"
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal"
+import { projects } from "@/data/projects"
+
+const CALENDLY =
+  "https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun"
+
+/** Unique stack keywords across every project, for the hero ticker. */
+const techTicker = Array.from(new Set(projects.flatMap((p) => p.stack)))
+
+const engagementLevels = [
+  {
+    level: "Level 1",
+    title: "Technical Clarity Package",
+    kicker: "Entry point for most founders",
+    body: "Turn vague ideas into a scoped, investor-ready plan. Includes structured interview, MVP/technical roadmap, architecture audit, risk assessment, and prioritized build guidance.",
+    fit: "Best for pre-seed / validating founders who want to avoid expensive mistakes.",
+  },
+  {
+    level: "Level 2",
+    title: "Fractional AI Architect Retainer",
+    kicker: null,
+    body: "Ongoing technical leadership (5-10 hrs/week). Roadmap ownership, architecture decisions, production reviews, agentic workflow implementation, and velocity protection.",
+    fit: "Best for startups that need consistent senior judgment without a full-time VP.",
+  },
+  {
+    level: "Level 3",
+    title: "Production AI System Build",
+    kicker: null,
+    body: "End-to-end architecture and implementation of production-grade AI systems (multi-agent orchestration, RAG platforms, scalable infrastructure).",
+    fit: "Best for funded teams ready to move from prototype to reliable production.",
+  },
+]
+
+const retrospectives = [
+  {
+    icon: "⚡",
+    title: "From Fractional CTO to Micro-SaaS",
+    blurb: "How 15 unbilled hours inspired an AI Shield",
+    href: "https://www.indiehackers.com/post/from-fractional-cto-to-micro-saas-how-15-unbilled-hours-inspired-an-ai-shield-and-what-the-data-says-about-v2-2e2502281a",
+  },
+  {
+    icon: "🏗️",
+    title: "Journey to building Scoply",
+    blurb:
+      "How feedback from v1 inspired a new product that investors love",
+    href: "https://www.indiehackers.com/post/its-live-i-turned-my-1-900-scope-creep-problem-into-a-product-iacD27k8eoY3SGw0ZKqE",
+  },
+]
+
+const testimonials = [
+  {
+    quote: (
+      <>
+        “Consistently demonstrated strong competency, thoughtful
+        problem-solving, and a deep sense of ownership...{" "}
+        <strong className="font-semibold text-white">
+          He doesn’t operate like a transactional contractor. He thinks like a
+          builder.
+        </strong>{" "}
+        He asks all the right questions, anticipates challenges, and considers
+        long-term sustainability...”
+      </>
+    ),
+    name: "Lou",
+    role: "Founder, SoulSource",
+    source: "Verified via Upwork",
+  },
+  {
+    quote: (
+      <>
+        “
+        <strong className="font-semibold text-white">
+          Shaun conducted a thorough evaluation of our product and clearly
+          communicated areas that required improvement.
+        </strong>{" "}
+        He worked closely with us every step of the way... His professionalism,
+        technical expertise, and outstanding attitude set him apart.”
+      </>
+    ),
+    name: "Kamdi",
+    role: "Founder, Kedai",
+    source: "Verified via Upwork",
+  },
+]
+
+const roles: Role[] = [
+  {
+    title: "VP Engineering & AI Tech Lead — Footura AI",
+    period: "Mar 2024 — Present",
+    body: "Architected and scaled AI coaching platform for both web and mobile using React Native, Swift/Kotlin, Next.js, NestJS, and LLMs. Reduced latency by 30% and increased engagement by 40%.",
+    dot: "bg-cyan-400",
+  },
+  {
+    title: "Founder & ML Engineer — AkShaun Inc.",
+    period: "Aug 2023 — Present",
+    body: "Built a real-time xG/xA sports performance system and LLM RAG stack with LangChain and Pinecone.",
+    dot: "bg-pink-400",
+  },
+  {
+    title: "Full Stack Engineer — DeskNow",
+    period: "Jan 2022 — Dec 2023",
+    body: "Led rewrite to DeskNow 2.0 using React/Next.js and NestJS, resulting in a 50% speed increase.",
+    dot: "bg-slate-500",
+  },
+  {
+    title: "Co-Founder and Lead Engineer — Yooni",
+    period: "Mar 2017 — August 2019",
+    body: "Wrote full code for University Visits/Yooni platform on Django/TS/Python - 1000+ users, incubated and raised pre-seed funding.",
+    dot: "bg-slate-500",
+  },
+]
+
+const education = [
+  {
+    school: "Johns Hopkins University",
+    degree: "M.S. in Computer Science",
+    degreeClass: "text-cyan-400",
+    focus: "Machine Learning, Algorithms, & Entrepreneurship",
+  },
+  {
+    school: "West Bengal University of Technology",
+    degree: "B.Tech in Computer Science",
+    degreeClass: "text-pink-400",
+    focus: "Research focused on Telecom and IEEE publications",
+  },
+]
+
+const goodFit = [
+  "A founder wanting technical guidance - in every way",
+  "An agency or dev shop battling scope creep and unbilled hours",
+  "A startup needing senior technical judgement and architecture audits",
+  "A team applying AI beyond simple chatbots — LLM, RAG, agentic workflows, or GenAI infrastructure",
+  "Frustrated by tool fragmentation and manual operational drag",
+]
+
+const badFit = [
+  "Looking for the cheapest development resource",
+  "Already have a large, established in-house engineering team",
+  "Not experiencing pain from scope creep or technical debt",
+  "Building simple brochureware or static sites",
+]
+
+const SECTION = "relative mx-auto mt-24 max-w-5xl scroll-mt-24 sm:mt-32"
+const CARD =
+  "group glow-border relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition-colors hover:border-white/20 sm:p-6"
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden px-6">
-      {/* Background glow */}
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-[520px] w-[980px] -translate-x-1/2 bg-gradient-to-br from-cyan-400/20 via-pink-400/8 to-transparent blur-3xl" />
+    <main className="relative overflow-hidden px-5 sm:px-6">
+      <Aurora />
 
-     {/* TOOL CALLOUTS - MOBILE OPTIMIZED */}
-<div className="relative mx-auto max-w-5xl space-y-2 pt-12 sm:pt-16 mt-8">
-  {/* Scoply */}
-  <div className="rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-cyan-950/40 p-3 backdrop-blur-sm sm:rounded-2xl sm:p-4">
-    <div className="flex items-center justify-between gap-2">
-      <div className="flex items-center gap-2 sm:gap-3">
-        <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-sm sm:h-8 sm:w-8 sm:text-lg">⚡</span>
-        <div>
-          <p className="text-[10px] text-white/50 sm:text-sm">beta-access</p>
-          <span className="text-xs font-medium text-cyan-300 sm:text-sm">Scoply</span>
-          <p className="hidden text-xs text-white/70 sm:block sm:text-sm">AI that flags scope creep in client calls. Protect your velocity and margins.</p>
-        </div>
-      </div>
-      <a
-        href="https://scoply-v2.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="shrink-0 rounded-lg bg-cyan-500/20 px-3 py-1.5 text-xs font-semibold text-cyan-300 transition hover:bg-cyan-500/30 hover:text-cyan-200 sm:rounded-xl sm:px-5 sm:py-2.5 sm:text-sm"
-      >
-        <span className="sm:inline">👉 Try for Free →</span>
-    
-      </a>
-    </div>
-    {/* Mobile-only description */}
-    <p className="mt-1.5 text-[11px] text-white/60 sm:hidden">AI that flags scope creep in client calls.</p>
-  </div>
-
-  {/* RepoDrift */}
-  <div className="rounded-xl border border-indigo-400/20 bg-gradient-to-r from-indigo-950/30 via-slate-900/50 to-indigo-950/30 p-3 backdrop-blur-sm transition hover:border-indigo-400/40 sm:rounded-2xl sm:p-4">
-    <div className="flex items-center justify-between gap-2">
-      <div className="flex items-center gap-2 sm:gap-3">
-        <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-400 text-sm sm:h-8 sm:w-8 sm:text-lg">🔍</span>
-        <div>
-          <p className="text-[10px] text-white/50 sm:text-sm">open-source</p>
-          <span className="text-xs font-medium text-indigo-300 sm:text-sm">RepoDrift</span>
-          <p className="hidden text-xs text-white/70 sm:block sm:text-sm">Zero-config CLI, Git repository health analyzer</p>
-        </div>
-      </div>
-      <div className="flex items-center gap-1.5 sm:gap-3">
-       
-        <a
-          href="https://github.com/shaunakmukherjee/repo-drift"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 rounded-lg bg-indigo-500/15 px-3 py-1.5 text-xs font-medium text-indigo-300 transition hover:bg-indigo-500/25 hover:text-indigo-200 sm:rounded-xl sm:px-5 sm:py-2.5 sm:text-sm"
-        >
-          <span className="sm:inline">⭐ Star on GitHub→</span>
-         
-        </a>
-      </div>
-    </div>
-    {/* Mobile-only description */}
-    <p className="mt-1.5 text-[11px] text-white/60 sm:hidden">Zero-config Git health analyzer</p>
-  </div>
-</div>
+      <ToolCallouts />
 
       {/* HERO */}
-      <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center pt-12">
-        <div className="mb-6 inline-flex items-center gap-3">
-          <span className="inline-block rounded-full bg-white/6 px-3 py-1 text-sm font-medium text-white/80">Book a Discovery Call for elite technical leverage</span>
-          <span className="text-sm text-white/50">Available for advisory & fractional leadership</span>
-        </div>
+      <section className="relative z-10 mx-auto flex min-h-[88vh] max-w-5xl flex-col justify-center pb-16 pt-12 sm:min-h-screen sm:pt-16">
+        {/* Availability badges */}
+        <Reveal
+          direction="down"
+          distance={16}
+          amount={0.4}
+          className="mb-6 flex flex-wrap items-center gap-2 sm:gap-3"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-medium text-white/80 sm:text-sm">
+            <span className="relative inline-flex h-1.5 w-1.5">
+              <span className="absolute inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-ring" />
+            </span>
+            Book a Discovery Call for elite technical leverage
+          </span>
+          <span className="text-xs text-white/50 sm:text-sm">
+            Available for advisory &amp; fractional leadership
+          </span>
+        </Reveal>
 
-        <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-6xl">Shaun - Principal AI Architect & Fractional CTO</h1>
-
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">I partner with select founders to turn AI ideas into production systems that users love and investors fund.<br className="hidden sm:block" /> Clear roadmaps, production-grade architectures (LLM/RAG/agentic), and hands-on delivery without the full-time hire.</p>
-
-
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-           <a
-            href="https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun"
-            className="rounded-xl animate-gradient px-7 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:translate-y-[-1px] hover:shadow-indigo-500/40"
+        <h1 className="max-w-4xl text-3xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
+          <AnimatedHeading
+            as="span"
+            text="Shaun - Principal AI Architect"
+            amount={0.2}
+            className="block"
+          />
+          <Reveal
+            direction="up"
+            distance={18}
+            delay={0.42}
+            amount={0.2}
+            className="block"
           >
-            Book a Discovery Call
-          </a>
-      
-        
+            <span className="animate-gradient">&amp; Fractional CTO</span>
+          </Reveal>
+        </h1>
 
-          <a
-            href="mailto:shaunmukherjee@proton.me"
-            className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
-          >
-            Initiate Enquiry
-          </a>
+        <Reveal delay={0.2} amount={0.2}>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:mt-6 sm:text-lg">
+            I partner with select founders to turn AI ideas into production
+            systems that users love and investors fund.
+            <br className="hidden sm:block" /> Clear roadmaps, production-grade
+            architectures (LLM/RAG/agentic), and hands-on delivery without the
+            full-time hire.
+          </p>
+        </Reveal>
 
-          <a
-            href="#projects"
-            className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
-          >
-            Review Architectural Portfolio
-          </a>
+        {/* CTAs — stacked and full width on mobile, wrapped row from sm up */}
+        <Stagger
+          delay={0.3}
+          stagger={0.07}
+          amount={0.2}
+          className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
+        >
+          <StaggerItem className="w-full sm:w-auto">
+            <MagneticLink
+              href={CALENDLY}
+              variant="primary"
+              external
+              fullWidthOnMobile
+            >
+              Book a Discovery Call
+            </MagneticLink>
+          </StaggerItem>
 
-           <a
-            href="#retrospectives"
-            className="rounded-xl border border-white/12 px-6 py-3 font-medium text-white/90 transition hover:bg-white/6 hover:border-white/30"
-          >
-           Review Engineering Retrospectives
-          </a>
+          <StaggerItem className="w-full sm:w-auto">
+            <MagneticLink href="mailto:shaunmukherjee@proton.me" fullWidthOnMobile>
+              Initiate Enquiry
+            </MagneticLink>
+          </StaggerItem>
+
+          <StaggerItem className="w-full sm:w-auto">
+            <MagneticLink href="#projects" fullWidthOnMobile>
+              Review Architectural Portfolio
+            </MagneticLink>
+          </StaggerItem>
+
+          <StaggerItem className="w-full sm:w-auto">
+            <MagneticLink href="#retrospectives" fullWidthOnMobile>
+              Review Engineering Retrospectives
+            </MagneticLink>
+          </StaggerItem>
+        </Stagger>
+
+        {/* Stack ticker */}
+        <Reveal delay={0.5} amount={0.2} className="mt-12 sm:mt-14">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/35">
+            Shipped with
+          </p>
+          <Marquee items={techTicker} className="mt-3" duration={42} />
+        </Reveal>
+
+        {/* Scroll cue */}
+        <div
+          aria-hidden
+          className="mt-10 hidden justify-center sm:flex"
+        >
+          <span className="flex h-9 w-5 items-start justify-center rounded-full border border-white/15 p-1">
+            <span className="h-1.5 w-1 rounded-full bg-white/60 animate-scroll-cue" />
+          </span>
         </div>
       </section>
 
       <AnimatedStats />
 
       {/* HOW I WORK */}
-      <section className="mx-auto mt-32 max-w-5xl" id="howiwork">
-        <h2 className="text-3xl font-semibold">How I Work With Founders - Three Clear Levels</h2>
-        <p className="mt-4 max-w-3xl text-white/60">I structure engagements so you get clarity fast, ongoing leverage when needed, and full production systems when you're ready.</p>
-        <div className="mt-10 grid gap-6">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <h3 className="text-xl font-semibold">Level 1: Technical Clarity Package</h3>
-            <p className="mt-2 text-sm font-medium text-cyan-300">Entry point for most founders</p>
-            <p className="mt-3 text-white/70">Turn vague ideas into a scoped, investor-ready plan. Includes structured interview, MVP/technical roadmap, architecture audit, risk assessment, and prioritized build guidance.</p>
-            <p className="mt-3 text-sm text-white/55">Best for pre-seed / validating founders who want to avoid expensive mistakes.</p>
+      <section className={SECTION} id="howiwork">
+        <SectionHeading
+          eyebrow="Engagement model"
+          title="How I Work With Founders - Three Clear Levels"
+          highlight={["Three", "Clear", "Levels"]}
+          subtitle="I structure engagements so you get clarity fast, ongoing leverage when needed, and full production systems when you're ready."
+        />
+
+        <Stagger className="mt-10 grid gap-4 sm:gap-6" stagger={0.1}>
+          {engagementLevels.map((item, index) => (
+            <StaggerItem key={item.level} interactive className={CARD}>
+              <div className="flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="mt-0.5 hidden h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-500/10 text-sm font-semibold text-cyan-300 sm:flex"
+                >
+                  {`0${index + 1}`}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-300/70 sm:hidden">
+                    {item.level}
+                  </p>
+                  <h3 className="mt-1 text-lg font-semibold sm:mt-0 sm:text-xl">
+                    <span className="hidden sm:inline">{item.level}: </span>
+                    {item.title}
+                  </h3>
+                  {item.kicker && (
+                    <p className="mt-2 text-sm font-medium text-cyan-300">
+                      {item.kicker}
+                    </p>
+                  )}
+                  <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
+                    {item.body}
+                  </p>
+                  <p className="mt-3 text-sm text-white/55">{item.fit}</p>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+
+          <StaggerItem className="glow-border relative overflow-hidden rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-5 backdrop-blur sm:p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300">
+              The ladder compounds
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
+              Most clients start at Level 1, move to Level 2 for leverage, and
+              engage Level 3 when scaling the core product.
+            </p>
+            <MagneticLink
+              href={CALENDLY}
+              variant="primary"
+              external
+              className="mt-5"
+              fullWidthOnMobile
+            >
+              Book a Discovery Call
+            </MagneticLink>
+          </StaggerItem>
+        </Stagger>
+
+        <Reveal className="mt-6 sm:mt-10" amount={0.15}>
+          <div className={CARD}>
+            <h3 className="text-lg font-semibold sm:text-xl">
+              My Leveraged Delivery System
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
+              I run my practice like a modern one-person company:
+            </p>
+            <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-white/65 sm:text-base">
+              {[
+                "A personal AI operating system (Agentic infrastructure + structured skills folder) that handles research, drafting, auditing, and templating.",
+                "Every repeatable process is skill-ified for consistency and speed.",
+                "This lets me deliver at the level of a small team while maintaining senior judgment on every engagement.",
+              ].map((line) => (
+                <li key={line} className="flex gap-3">
+                  <span
+                    aria-hidden
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-400/70"
+                  />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">
+              This is how I provide elite support to multiple founders without
+              compromising quality.
+            </p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <h3 className="text-xl font-semibold">Level 2: Fractional AI Architect Retainer</h3>
-            <p className="mt-3 text-white/70">Ongoing technical leadership (5-10 hrs/week). Roadmap ownership, architecture decisions, production reviews, agentic workflow implementation, and velocity protection.</p>
-            <p className="mt-3 text-sm text-white/55">Best for startups that need consistent senior judgment without a full-time VP.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-white/20">
-            <h3 className="text-xl font-semibold text-white">Level 3: Production AI System Build</h3>
-            <p className="mt-3 text-white/70">End-to-end architecture and implementation of production-grade AI systems (multi-agent orchestration, RAG platforms, scalable infrastructure).</p>
-            <p className="mt-3 text-sm text-white/55">Best for funded teams ready to move from prototype to reliable production.</p>
-          </div>
-          <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-6 backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-300">The ladder compounds</p>
-            <p className="mt-3 text-white/70">Most clients start at Level 1, move to Level 2 for leverage, and engage Level 3 when scaling the core product.</p>
-            <a href="https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun" className="mt-5 inline-flex rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:translate-y-[-1px]">Book a Discovery Call</a>
-          </div>
-        </div>
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-          <h3 className="text-xl font-semibold">My Leveraged Delivery System</h3>
-          <p className="mt-3 text-white/70">I run my practice like a modern one-person company:</p>
-          <ul className="mt-4 space-y-2 text-white/65">
-            <li>- A personal AI operating system (Agentic infrastructure + structured skills folder) that handles research, drafting, auditing, and templating.</li>
-            <li>- Every repeatable process is skill-ified for consistency and speed.</li>
-            <li>- This lets me deliver at the level of a small team while maintaining senior judgment on every engagement.</li>
-          </ul>
-          <p className="mt-4 text-white/70">This is how I provide elite support to multiple founders without compromising quality.</p>
-        </div>
+        </Reveal>
       </section>
 
-      {/* ENGINEERING RETROSPECTIVES SECTION */}
-      <section className="mx-auto mt-32 max-w-5xl" id="retrospectives">
-        <h2 className="text-3xl font-semibold">
-          Engineering Retrospectives
-        </h2>
-        <p className="mt-4 max-w-2xl text-white/60">
-          Technical deep-dives, architectural decisions, and lessons learned from production systems.
-        </p>
+      {/* ENGINEERING RETROSPECTIVES */}
+      <section className={SECTION} id="retrospectives">
+        <SectionHeading
+          eyebrow="Writing"
+          title="Engineering Retrospectives"
+          highlight={["Retrospectives"]}
+          subtitle="Technical deep-dives, architectural decisions, and lessons learned from production systems."
+        />
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-           <a 
-            href="https://www.indiehackers.com/post/from-fractional-cto-to-micro-saas-how-15-unbilled-hours-inspired-an-ai-shield-and-what-the-data-says-about-v2-2e2502281a" 
-            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/10"
-          >
-            <span className="text-2xl">⚡</span>
-            <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-300">From Fractional CTO to Micro-SaaS</h3>
-            <p className="mt-2 text-sm text-white/60">How 15 unbilled hours inspired an AI Shield</p>
-            <span className="mt-3 inline-block text-sm text-cyan-400/60 group-hover:text-cyan-300">Read more →</span>
-          </a>
-
-          <a 
-            href="https://www.indiehackers.com/post/its-live-i-turned-my-1-900-scope-creep-problem-into-a-product-iacD27k8eoY3SGw0ZKqE" 
-            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/10"
-          >
-            <span className="text-2xl">🏗️</span>
-            <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-cyan-300">Journey to building Scoply</h3>
-            <p className="mt-2 text-sm text-white/60">How feedback from v1 inspired a new product that investors love</p>
-            <span className="mt-3 inline-block text-sm text-cyan-400/60 group-hover:text-cyan-300">Read more →</span>
-          </a>
-
-         
-        </div>
+        <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6">
+          {retrospectives.map((post) => (
+            <StaggerItem key={post.title} interactive>
+              <a
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sheen group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 transition-colors hover:border-cyan-400/30 hover:bg-white/[0.08] sm:p-6"
+              >
+                <span className="inline-block text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                  {post.icon}
+                </span>
+                <h3 className="mt-3 text-base font-semibold text-white transition-colors group-hover:text-cyan-300 sm:text-lg">
+                  {post.title}
+                </h3>
+                <p className="mt-2 text-sm text-white/60">{post.blurb}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-cyan-400/70 transition-colors group-hover:text-cyan-300">
+                  Read more
+                  <span
+                    aria-hidden
+                    className="inline-block transition-transform duration-300 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </span>
+              </a>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </section>
 
       {/* PROJECTS */}
-      <section
-        id="projects"
-        className="mx-auto mt-32 max-w-5xl"
-      >
-        <h2 className="text-3xl font-semibold">
-          Selected work
-        </h2>
+      <section className={SECTION} id="projects">
+        <SectionHeading
+          eyebrow="Portfolio"
+          title="Selected work"
+          highlight={["work"]}
+          subtitle="Products I’ve built or led end-to-end — from early concept through production systems and real users."
+        />
 
-        <p className="mt-4 max-w-2xl text-white/60">
-          Products I’ve built or led end-to-end — from
-          early concept through production systems
-          and real users.
-        </p>
-
-        <div className="mt-12 grid gap-8 sm:grid-cols-2">
-          {projects.map((project) => (
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 sm:gap-8">
+          {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
+              index={index}
               title={project.title}
               description={project.description}
               outcome={project.outcome || ''}
@@ -217,137 +425,133 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="mx-auto mt-32 max-w-5xl" id="testimonials">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-3xl font-semibold">Trusted by founders and operators</h2>
-            <p className="mt-4 max-w-2xl text-white/60">
-              Verified technical partnership feedback from clients who needed senior product and architecture leadership under pressure.
-            </p>
-          </div>
-        </div>
+      <section className={SECTION} id="testimonials">
+        <SectionHeading
+          eyebrow="Social proof"
+          title="Trusted by founders and operators"
+          highlight={["founders", "and", "operators"]}
+          subtitle="Verified technical partnership feedback from clients who needed senior product and architecture leadership under pressure."
+        />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <p className="text-lg leading-relaxed text-white/75">
-              “Consistently demonstrated strong competency, thoughtful problem-solving, and a deep sense of ownership... <strong className="font-semibold text-white">He doesn’t operate like a transactional contractor. He thinks like a builder.</strong> He asks all the right questions, anticipates challenges, and considers long-term sustainability...”
-            </p>
-            <div className="mt-6 border-t border-white/10 pt-4">
-              <p className="font-semibold text-white">Lou</p>
-              <p className="mt-1 text-sm text-cyan-300/80">Founder, SoulSource</p>
-              <p className="mt-1 text-sm text-white/50">Verified via Upwork</p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-            <p className="text-lg leading-relaxed text-white/75">
-              “<strong className="font-semibold text-white">Shaun conducted a thorough evaluation of our product and clearly communicated areas that required improvement.</strong> He worked closely with us every step of the way... His professionalism, technical expertise, and outstanding attitude set him apart.”
-            </p>
-            <div className="mt-6 border-t border-white/10 pt-4">
-              <p className="font-semibold text-white">Kamdi</p>
-              <p className="mt-1 text-sm text-cyan-300/80">Founder, Kedai</p>
-              <p className="mt-1 text-sm text-white/50">Verified via Upwork</p>
-            </div>
-          </div>
-        </div>
+        <Stagger className="mt-10 grid gap-4 sm:gap-6 lg:grid-cols-2">
+          {testimonials.map((item) => (
+            <StaggerItem key={item.name} interactive className={CARD}>
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-4 right-4 font-serif text-7xl leading-none text-white/[0.07] transition-colors duration-500 group-hover:text-cyan-400/10"
+              >
+                ”
+              </span>
+              <p className="relative text-base leading-relaxed text-white/75 sm:text-lg">
+                {item.quote}
+              </p>
+              <div className="mt-6 border-t border-white/10 pt-4">
+                <p className="font-semibold text-white">{item.name}</p>
+                <p className="mt-1 text-sm text-cyan-300/80">{item.role}</p>
+                <p className="mt-1 text-sm text-white/50">{item.source}</p>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </section>
 
-
-     {/* EXPERIENCE SECTION */}
-      <section className="mx-auto mt-32 max-w-5xl">
-        <h2 className="text-3xl font-semibold">Experience</h2>
-        <div className="mt-10 space-y-12">
-          {/* Footura */}
-          <div className="relative border-l border-white/10 pl-8">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-cyan-400" />
-            <h3 className="text-xl font-bold text-white">VP Engineering & AI Tech Lead — Footura AI</h3>
-            <p className="text-sm text-white/50">Mar 2024 — Present</p>
-            <p className="mt-3 text-white/70">
-              Architected and scaled AI coaching platform for both web and mobile using React Native, Swift/Kotlin, Next.js, NestJS, and LLMs. 
-              Reduced latency by 30% and increased engagement by 40%.
-            </p>
-          </div>
-
-          {/* AkShaun */}
-          <div className="relative border-l border-white/10 pl-8">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-pink-400" />
-            <h3 className="text-xl font-bold text-white">Founder & ML Engineer — AkShaun Inc.</h3>
-            <p className="text-sm text-white/50">Aug 2023 — Present</p>
-            <p className="mt-3 text-white/70">
-              Built a real-time xG/xA sports performance system and LLM RAG stack with LangChain and Pinecone.
-            </p>
-          </div>
-
-          {/* DeskNow */}
-          <div className="relative border-l border-white/10 pl-8">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-gray-500" />
-            <h3 className="text-xl font-bold text-white">Full Stack Engineer — DeskNow</h3>
-            <p className="text-sm text-white/50">Jan 2022 — Dec 2023</p>
-            <p className="mt-3 text-white/70">
-              Led rewrite to DeskNow 2.0 using React/Next.js and NestJS, resulting in a 50% speed increase.
-            </p>
-          </div>
-
-          {/* DeskNow */}
-          <div className="relative border-l border-white/10 pl-8">
-            <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-gray-500" />
-            <h3 className="text-xl font-bold text-white">Co-Founder and Lead Engineer - Yooni</h3>
-            <p className="text-sm text-white/50">Mar 2017 — August 2019</p>
-            <p className="mt-3 text-white/70">
-              Wrote full code for University Visits/Yooni platform on Django/TS/Python - 1000+ users, incubated and raised pre-seed funding.
-            </p>
-          </div>
-        </div>
+      {/* EXPERIENCE */}
+      <section className={SECTION} id="experience">
+        <SectionHeading
+          eyebrow="Track record"
+          title="Experience"
+          highlight={["Experience"]}
+        />
+        <ExperienceTimeline roles={roles} />
       </section>
 
-      {/* EDUCATION SECTION */}
-      <section className="mx-auto mt-32 max-w-5xl">
-        <h2 className="text-3xl font-semibold">Education</h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-lg font-bold text-white">Johns Hopkins University</h3>
-            <p className="text-cyan-400">M.S. in Computer Science</p>
-            <p className="mt-2 text-sm text-white/60">Machine Learning, Algorithms, & Entrepreneurship</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-lg font-bold text-white">West Bengal University of Technology</h3>
-            <p className="text-pink-400">B.Tech in Computer Science</p>
-            <p className="mt-2 text-sm text-white/60">Research focused on Telecom and IEEE publications</p>
-          </div>
-        </div>
+      {/* EDUCATION */}
+      <section className={SECTION} id="education">
+        <SectionHeading
+          eyebrow="Foundations"
+          title="Education"
+          highlight={["Education"]}
+        />
+
+        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6">
+          {education.map((item) => (
+            <StaggerItem key={item.school} interactive className={CARD}>
+              <h3 className="text-base font-bold text-white sm:text-lg">
+                {item.school}
+              </h3>
+              <p className={`mt-1 text-sm sm:text-base ${item.degreeClass}`}>
+                {item.degree}
+              </p>
+              <p className="mt-2 text-sm text-white/60">{item.focus}</p>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </section>
 
       {/* WHO IT'S FOR */}
-      <section className="mx-auto mt-32 max-w-5xl">
-        <h2 className="text-3xl font-semibold">
-          Who It's For
-        </h2>
+      <section className={SECTION} id="fit">
+        <SectionHeading
+          eyebrow="Qualification"
+          title="Who It's For"
+          highlight={["For"]}
+        />
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-2">
-          <div>
-            <h3 className="text-xl font-semibold text-white">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 sm:gap-8">
+          <Reveal direction="right" amount={0.15}>
+            <h3 className="flex items-center gap-2 text-lg font-semibold text-white sm:text-xl">
+              <span
+                aria-hidden
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/15 text-xs text-emerald-400"
+              >
+                ✓
+              </span>
               Good fit if you’re:
             </h3>
-            <ul className="mt-4 space-y-2 text-white/70">
-                 <li>• A founder wanting technical guidance - in every way</li>
-        <li>• An agency or dev shop battling scope creep and unbilled hours</li>
-        <li>• A startup needing senior technical judgement and architecture audits</li>
-        <li>• A team applying AI beyond simple chatbots — LLM, RAG, agentic workflows, or GenAI infrastructure</li>
-        <li>• Frustrated by tool fragmentation and manual operational drag</li>
-            </ul>
-          </div>
+            <Stagger className="mt-4 space-y-2.5" stagger={0.07}>
+              {goodFit.map((line) => (
+                <StaggerItem
+                  key={line}
+                  direction="right"
+                  distance={14}
+                  className="flex gap-3 text-sm leading-relaxed text-white/70 sm:text-base"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400/70"
+                  />
+                  <span>{line}</span>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </Reveal>
 
-          <div>
-            <h3 className="text-xl font-semibold text-white">
+          <Reveal direction="left" amount={0.15}>
+            <h3 className="flex items-center gap-2 text-lg font-semibold text-white sm:text-xl">
+              <span
+                aria-hidden
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-rose-500/15 text-xs text-rose-400"
+              >
+                ✕
+              </span>
               Probably not a fit if:
             </h3>
-            <ul className="mt-4 space-y-2 text-white/70">
-               <li>• Looking for the cheapest development resource</li>
-        <li>• Already have a large, established in-house engineering team</li>
-        <li>• Not experiencing pain from scope creep or technical debt</li>
-        <li>• Building simple brochureware or static sites</li>
-            </ul>
-          </div>
+            <Stagger className="mt-4 space-y-2.5" stagger={0.07}>
+              {badFit.map((line) => (
+                <StaggerItem
+                  key={line}
+                  direction="left"
+                  distance={14}
+                  className="flex gap-3 text-sm leading-relaxed text-white/70 sm:text-base"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-rose-400/60"
+                  />
+                  <span>{line}</span>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </Reveal>
         </div>
       </section>
 
@@ -360,7 +564,7 @@ export default function Home() {
  *
       <section className="mx-auto mt-32 max-w-5xl px-4 sm:px-6" id="product-playbook">
         <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/40 p-8 shadow-2xl shadow-indigo-950/40 backdrop-blur sm:p-12">
-          
+
           <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
           <div className="absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-pink-500/10 blur-3xl pointer-events-none" />
 
@@ -379,7 +583,7 @@ export default function Home() {
 
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch relative z-10">
-        
+
             <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-slate-950/60 p-6 sm:p-8 backdrop-blur-sm">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Here's what you'll be able to do</p>
@@ -407,7 +611,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/60 p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold">FREE</span>
@@ -424,7 +628,7 @@ export default function Home() {
                   Download Free Sample →
                 </a>
               </div>
-              
+
               <div className="mt-6 pt-4 border-t border-white/5 flex flex-wrap gap-3 items-center text-xs text-slate-400">
                 <span>Perfect if you're:</span>
                 <span className="bg-slate-900 px-2 py-1 rounded border border-white/5 text-white">Planning your MVP</span>
@@ -433,9 +637,9 @@ export default function Home() {
               </div>
             </div>
 
-        
+
             <div className="flex flex-col gap-4">
-           
+
               <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-950/60 p-6 text-center lg:text-left">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">MVP Roadmapping Kit</span>
@@ -482,7 +686,7 @@ export default function Home() {
           </div>
           </div>
       </section>
- * 
- * 
- * 
+ *
+ *
+ *
 */
