@@ -95,13 +95,13 @@ const testimonials = [
 
 const roles: Role[] = [
   {
-    title: "VP Engineering & AI Tech Lead — Footura AI",
+    title: "VP Engineering & Fractional Tech Lead — Footura AI (part-time)",
     period: "Mar 2024 — Present",
     body: "Architected and scaled AI coaching platform for both web and mobile using React Native, Swift/Kotlin, Next.js, NestJS, and LLMs. Reduced latency by 30% and increased engagement by 40%.",
     dot: "bg-cyan-400",
   },
   {
-    title: "Founder & ML Engineer — AkShaun Inc.",
+    title: "Founder & AI Engineer — AkShaun ",
     period: "Aug 2023 — Present",
     body: "Built a real-time xG/xA sports performance system and LLM RAG stack with LangChain and Pinecone.",
     dot: "bg-pink-400",
@@ -265,7 +265,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AnimatedStats />
+     
 
       {/* HOW I WORK */}
       <section className={SECTION} id="howiwork">
