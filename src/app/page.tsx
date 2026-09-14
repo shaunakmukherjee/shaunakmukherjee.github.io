@@ -73,7 +73,7 @@ const testimonials = [
     ),
     name: "Lou",
     role: "Founder, SoulSource",
-    source: "Verified via Upwork",
+    source: "",
   },
   {
     quote: (
@@ -88,8 +88,8 @@ const testimonials = [
       </>
     ),
     name: "Kamdi",
-    role: "Founder, Kedai",
-    source: "Verified via Upwork",
+    role: "Founder, KedAI",
+    source: "",
   },
 ]
 

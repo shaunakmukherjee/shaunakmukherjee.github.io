@@ -18,6 +18,14 @@ export const projects = [
     stack: ["Next.js", "AI Agents", "Product Management", "AI engineering" ],
   },
   {
+    title: "DexterAI",
+    description: "An AI copilot for streamers that allows full control over their streaming experience with integrations to OBS, Twitch, Discord, etc.",
+    outcome: "Led implementation of the twitch and gmail integrations to main app during seed phase, enabling users to skillfully control their streaming experience",
+    image: "/projects/dexter-pic.png",
+    link : "https://www.dexterai.org/",
+    stack: ["Electron", "AI Architecture", "OBS", "Twitch", "LLM", "Python"],
+  },
+  {
     title: "Flippable AI",
     description:
       "A full-stack AI application acting as a digital project partner for homeowners and small-scale property developers.",
