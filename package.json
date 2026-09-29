@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "npm run build && gh-pages -d out --dotfiles",
+    "deploy": "npm run build && npx gh-pages-clean && gh-pages -d out --dotfiles",
     "lint": "eslint"
   },
   "dependencies": {
