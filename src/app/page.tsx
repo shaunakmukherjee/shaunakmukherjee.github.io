@@ -1,10 +1,8 @@
 import ProjectCard from "@/components/ProjectCard"
 import AnimatedStats from "@/components/AnimatedStats"
 import Footer from "@/components/Footer"
-import ToolCallouts from "@/components/ToolCallouts"
 import ExperienceTimeline, { type Role } from "@/components/ExperienceTimeline"
 import Aurora from "@/components/motion/Aurora"
-import Marquee from "@/components/motion/Marquee"
 import MagneticLink from "@/components/motion/MagneticLink"
 import SectionHeading from "@/components/motion/SectionHeading"
 import AnimatedHeading from "@/components/motion/AnimatedHeading"
@@ -14,46 +12,40 @@ import { projects } from "@/data/projects"
 const CALENDLY =
   "https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun"
 
-/** Unique stack keywords across every project, for the hero ticker. */
-const techTicker = Array.from(new Set(projects.flatMap((p) => p.stack)))
-
 const engagementLevels = [
   {
     level: "Level 1",
-    title: "Technical Clarity Package",
-    kicker: "Entry point for most founders",
-    body: "Turn vague ideas into a scoped, investor-ready plan. Includes structured interview, MVP/technical roadmap, architecture audit, risk assessment, and prioritized build guidance.",
-    fit: "Best for pre-seed / validating founders who want to avoid expensive mistakes.",
+    title: "Technical Clarity",
+    kicker: null,
+    body:
+      "A focused engagement that turns an idea or early product into a clear, investor-ready plan: scope, architecture, risks, and what to build first.",
+    fit: "Best for: Pre-seed founders who want to avoid expensive mistakes.",
   },
   {
     level: "Level 2",
-    title: "Fractional AI Architect Retainer",
+    title: "Fractional CTO",
     kicker: null,
-    body: "Ongoing technical leadership (5-10 hrs/week). Roadmap ownership, architecture decisions, production reviews, agentic workflow implementation, and velocity protection.",
-    fit: "Best for startups that need consistent senior judgment without a full-time VP.",
+    body:
+      "Ongoing senior technical leadership, around 5–10 hours a week. I own the roadmap and architecture decisions, review what ships, and help with hiring and fundraising.",
+    fit:
+      "Best for: Startups that need senior judgement before they can justify a full-time CTO.",
   },
   {
     level: "Level 3",
-    title: "Production AI System Build",
+    title: "Production Build",
     kicker: null,
-    body: "End-to-end architecture and implementation of production-grade AI systems (multi-agent orchestration, RAG platforms, scalable infrastructure).",
-    fit: "Best for funded teams ready to move from prototype to reliable production.",
-  },
-]
-
-const retrospectives = [
-  {
-    icon: "⚡",
-    title: "From Fractional CTO to Micro-SaaS",
-    blurb: "How 15 unbilled hours inspired an AI Shield",
-    href: "https://www.indiehackers.com/post/from-fractional-cto-to-micro-saas-how-15-unbilled-hours-inspired-an-ai-shield-and-what-the-data-says-about-v2-2e2502281a",
+    body:
+      "End-to-end design and delivery of production AI systems, from prototype to something real users and investors can rely on.",
+    fit: "Best for: Funded teams ready to scale their core product.",
   },
   {
-    icon: "🏗️",
-    title: "Journey to building Scoply",
-    blurb:
-      "How feedback from v1 inspired a new product that investors love",
-    href: "https://www.indiehackers.com/post/its-live-i-turned-my-1-900-scope-creep-problem-into-a-product-iacD27k8eoY3SGw0ZKqE",
+    level: "Level 4",
+    title: "For Investors: Technical Due Diligence",
+    kicker: null,
+    body:
+      "Before you fund or join an AI venture, I assess what's actually been built: whether the technology is real, defensible and scalable, and what the risks are. Clear written findings, no jargon.",
+    fit:
+      "Best for: Angels, family offices and HNWIs evaluating tech or AI investments.",
   },
 ]
 
@@ -96,7 +88,7 @@ const testimonials = [
 const roles: Role[] = [
   {
     title: "VP Engineering & Fractional Tech Lead — Footura AI (part-time)",
-    period: "Mar 2024 — Present",
+    period: "Apr 2024 — Present",
     body: "Architected and scaled AI coaching platform for both web and mobile using React Native, Swift/Kotlin, Next.js, NestJS, and LLMs. Reduced latency by 30% and increased engagement by 40%.",
     dot: "bg-cyan-400",
   },
@@ -108,13 +100,13 @@ const roles: Role[] = [
   },
   {
     title: "Full Stack Engineer — DeskNow",
-    period: "Jan 2022 — Dec 2023",
+    period: "Jan 2022 — Jan 2024",
     body: "Led rewrite to DeskNow 2.0 using React/Next.js and NestJS, resulting in a 50% speed increase.",
     dot: "bg-slate-500",
   },
   {
     title: "Co-Founder and Lead Engineer — Yooni",
-    period: "Mar 2017 — August 2019",
+    period: "Sep 2017 — Jun 2019",
     body: "Wrote full code for University Visits/Yooni platform on Django/TS/Python - 1000+ users, incubated and raised pre-seed funding.",
     dot: "bg-slate-500",
   },
@@ -136,18 +128,16 @@ const education = [
 ]
 
 const goodFit = [
-  "A founder wanting technical guidance - in every way",
-  "An agency or dev shop battling scope creep and unbilled hours",
-  "A startup needing senior technical judgement and architecture audits",
-  "A team applying AI beyond simple chatbots — LLM, RAG, agentic workflows, or GenAI infrastructure",
-  "Frustrated by tool fragmentation and manual operational drag",
+  "A founder building something ambitious with AI who needs senior technical judgement",
+  "A non-technical founder who needs someone to own the technology side",
+  "An investor or HNWI who wants an independent view on a tech or AI venture",
+  "A startup preparing for fundraising or technical due diligence",
 ]
 
 const badFit = [
-  "Looking for the cheapest development resource",
-  "Already have a large, established in-house engineering team",
-  "Not experiencing pain from scope creep or technical debt",
-  "Building simple brochureware or static sites",
+  "You're looking for the cheapest developer available",
+  "You already have a large in-house engineering team",
+  "You need a simple website or brochure site",
 ]
 
 const SECTION = "relative mx-auto mt-24 max-w-5xl scroll-mt-24 sm:mt-32"
@@ -158,8 +148,6 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden px-5 sm:px-6">
       <Aurora />
-
-      <ToolCallouts />
 
       {/* HERO */}
       <section className="relative z-10 mx-auto flex min-h-[88vh] max-w-5xl flex-col justify-center pb-16 pt-12 sm:min-h-screen sm:pt-16">
@@ -174,38 +162,25 @@ export default function Home() {
             <span className="relative inline-flex h-1.5 w-1.5">
               <span className="absolute inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-ring" />
             </span>
-            Book a Discovery Call for elite technical leverage
-          </span>
-          <span className="text-xs text-white/50 sm:text-sm">
-            Available for advisory &amp; fractional leadership
+            Available for fractional CTO and advisory work
           </span>
         </Reveal>
 
         <h1 className="max-w-4xl text-3xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
           <AnimatedHeading
             as="span"
-            text="Shaun - Principal AI Architect"
+            text="Senior technical leadership for founders, and the people who back them."
             amount={0.2}
             className="block"
           />
-          <Reveal
-            direction="up"
-            distance={18}
-            delay={0.42}
-            amount={0.2}
-            className="block"
-          >
-            <span className="animate-gradient">&amp; Fractional CTO</span>
-          </Reveal>
         </h1>
 
         <Reveal delay={0.2} amount={0.2}>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:mt-6 sm:text-lg">
-            I partner with select founders to turn AI ideas into production
-            systems that users love and investors fund.
-            <br className="hidden sm:block" /> Clear roadmaps, production-grade
-            architectures (LLM/RAG/agentic), and hands-on delivery without the
-            full-time hire.
+            I help founders turn AI ideas into products that work and raise
+            money, and help investors understand what they&apos;re really
+            funding. Seven years across AI, startups and production engineering.
+            MS Computer Science, Johns Hopkins.
           </p>
         </Reveal>
 
@@ -229,29 +204,25 @@ export default function Home() {
 
           <StaggerItem className="w-full sm:w-auto">
             <MagneticLink href="mailto:shaunmukherjee@proton.me" fullWidthOnMobile>
-              Initiate Enquiry
+              Email me
             </MagneticLink>
           </StaggerItem>
 
           <StaggerItem className="w-full sm:w-auto">
             <MagneticLink href="#projects" fullWidthOnMobile>
-              Review Architectural Portfolio
-            </MagneticLink>
-          </StaggerItem>
-
-          <StaggerItem className="w-full sm:w-auto">
-            <MagneticLink href="#retrospectives" fullWidthOnMobile>
-              Review Engineering Retrospectives
+              See my work
             </MagneticLink>
           </StaggerItem>
         </Stagger>
 
-        {/* Stack ticker */}
         <Reveal delay={0.5} amount={0.2} className="mt-12 sm:mt-14">
           <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/35">
             Shipped with
           </p>
-          <Marquee items={techTicker} className="mt-3" duration={42} />
+          <p className="mt-3 text-sm leading-relaxed text-white/55 sm:text-base">
+            Hands-on with LLMs, RAG, AI agents, Python, Next.js and mobile,
+            from prototype to production.
+          </p>
         </Reveal>
 
         {/* Scroll cue */}
@@ -270,10 +241,9 @@ export default function Home() {
       {/* HOW I WORK */}
       <section className={SECTION} id="howiwork">
         <SectionHeading
-          eyebrow="Engagement model"
-          title="How I Work With Founders - Three Clear Levels"
-          highlight={["Three", "Clear", "Levels"]}
-          subtitle="I structure engagements so you get clarity fast, ongoing leverage when needed, and full production systems when you're ready."
+          title="How I work with you"
+          highlight={["work", "with", "you"]}
+          subtitle="Start small, get clarity fast, and scale the engagement only when it's earning its keep."
         />
 
         <Stagger className="mt-10 grid gap-4 sm:gap-6" stagger={0.1}>
@@ -309,12 +279,9 @@ export default function Home() {
           ))}
 
           <StaggerItem className="glow-border relative overflow-hidden rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-5 backdrop-blur sm:p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300">
-              The ladder compounds
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
-              Most clients start at Level 1, move to Level 2 for leverage, and
-              engage Level 3 when scaling the core product.
+            <p className="text-sm leading-relaxed text-white/70 sm:text-base">
+              Most founders start with Technical Clarity and continue only if
+              it&apos;s clearly worth it.
             </p>
             <MagneticLink
               href={CALENDLY}
@@ -331,72 +298,17 @@ export default function Home() {
         <Reveal className="mt-6 sm:mt-10" amount={0.15}>
           <div className={CARD}>
             <h3 className="text-lg font-semibold sm:text-xl">
-              My Leveraged Delivery System
+              Why I can move fast
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
-              I run my practice like a modern one-person company:
-            </p>
-            <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-white/65 sm:text-base">
-              {[
-                "A personal AI operating system (Agentic infrastructure + structured skills folder) that handles research, drafting, auditing, and templating.",
-                "Every repeatable process is skill-ified for consistency and speed.",
-                "This lets me deliver at the level of a small team while maintaining senior judgment on every engagement.",
-              ].map((line) => (
-                <li key={line} className="flex gap-3">
-                  <span
-                    aria-hidden
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-400/70"
-                  />
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">
-              This is how I provide elite support to multiple founders without
-              compromising quality.
+              I&apos;ve automated the repetitive parts of my work (research,
+              templating, first drafts) so my time goes where it matters:
+              decisions, architecture, and the conversations that move your
+              company forward. You get the speed of a small team with a senior
+              person accountable for every call.
             </p>
           </div>
         </Reveal>
-      </section>
-
-      {/* ENGINEERING RETROSPECTIVES */}
-      <section className={SECTION} id="retrospectives">
-        <SectionHeading
-          eyebrow="Writing"
-          title="Engineering Retrospectives"
-          highlight={["Retrospectives"]}
-          subtitle="Technical deep-dives, architectural decisions, and lessons learned from production systems."
-        />
-
-        <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6">
-          {retrospectives.map((post) => (
-            <StaggerItem key={post.title} interactive>
-              <a
-                href={post.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sheen group relative block h-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 transition-colors hover:border-cyan-400/30 hover:bg-white/[0.08] sm:p-6"
-              >
-                <span className="inline-block text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
-                  {post.icon}
-                </span>
-                <h3 className="mt-3 text-base font-semibold text-white transition-colors group-hover:text-cyan-300 sm:text-lg">
-                  {post.title}
-                </h3>
-                <p className="mt-2 text-sm text-white/60">{post.blurb}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-cyan-400/70 transition-colors group-hover:text-cyan-300">
-                  Read more
-                  <span
-                    aria-hidden
-                    className="inline-block transition-transform duration-300 group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
-                </span>
-              </a>
-            </StaggerItem>
-          ))}
-        </Stagger>
       </section>
 
       {/* PROJECTS */}
@@ -405,7 +317,7 @@ export default function Home() {
           eyebrow="Portfolio"
           title="Selected work"
           highlight={["work"]}
-          subtitle="Products I’ve built or led end-to-end — from early concept through production systems and real users."
+          subtitle="Products I've built or led, from first idea to real users."
         />
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 sm:gap-8">
@@ -427,10 +339,9 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <section className={SECTION} id="testimonials">
         <SectionHeading
-          eyebrow="Social proof"
-          title="Trusted by founders and operators"
-          highlight={["founders", "and", "operators"]}
-          subtitle="Verified technical partnership feedback from clients who needed senior product and architecture leadership under pressure."
+          title="What founders say"
+          highlight={["founders", "say"]}
+          subtitle="From founders I've worked with directly."
         />
 
         <Stagger className="mt-10 grid gap-4 sm:gap-6 lg:grid-cols-2">

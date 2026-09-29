@@ -8,8 +8,8 @@ import ScrollProgress from "@/components/motion/ScrollProgress"
 
 const LINKS = [
   { href: "#projects", label: "Work", always: true },
-  { href: "#howiwork", label: "How I Work", always: false },
-  { href: "#retrospectives", label: "Retrospectives", always: false },
+  { href: "#howiwork", label: "How I work", always: false },
+  { href: "mailto:shaunmukherjee@proton.me", label: "Email", always: false },
 ]
 
 export default function Navbar() {

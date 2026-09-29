@@ -154,7 +154,11 @@ export default function ProjectCard({
             {description}
           </p>
 
-          <p className="mt-4 text-sm leading-relaxed text-white/50">{outcome}</p>
+          {outcome ? (
+            <p className="mt-4 text-sm leading-relaxed text-white/50">
+              {outcome}
+            </p>
+          ) : null}
 
           <div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
             {stack.map((tech, i) => (

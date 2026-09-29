@@ -11,18 +11,20 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL("https://shaunakmukherjee.github.io"),
-  title: "Shaun — Principal AI Architect & Engineer",
+  title:
+    "Shaun Mukherjee | Fractional CTO & AI Architect for Founders and Investors",
   description:
-    "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
+    "Senior technical leadership for founders and investors: AI product strategy, technical due diligence, and production builds, without a full-time hire.",
   verification: {
     other: {
       'msvalidate.01': ['06AF66FADC8DBE65F9B264C90D3D37FE'],
     },
   },
     openGraph: {
-    title: "Shaun — Principal AI Engineer and Builder",
+    title:
+      "Shaun Mukherjee | Fractional CTO & AI Architect for Founders and Investors",
     description:
-      "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
+      "Senior technical leadership for founders and investors: AI product strategy, technical due diligence, and production builds, without a full-time hire.",
     url: "https://shaunakmukherjee.github.io",
     siteName: "Shaun's Portfolio",
     images: [
@@ -30,16 +32,17 @@ export const metadata = {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Shaun — Principal AI Engineer and Builder",
+        alt: "Shaun Mukherjee, Fractional CTO & AI Architect",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaun — Principal AI Architect & Engineer",
+    title:
+      "Shaun Mukherjee | Fractional CTO & AI Architect for Founders and Investors",
     description:
-      "Architecting high-throughput microservices, production-grade AI infrastructure, and resilient agentic workflows for premium enterprise platforms.",
+      "Senior technical leadership for founders and investors: AI product strategy, technical due diligence, and production builds, without a full-time hire.",
     images: ["/og.jpg"],
   },
 }
