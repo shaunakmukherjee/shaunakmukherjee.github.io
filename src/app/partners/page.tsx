@@ -3,14 +3,16 @@ import Image from "next/image"
 import Aurora from "@/components/motion/Aurora"
 
 export const metadata: Metadata = {
-  title: "Shaun Mukherjee | Partnership overview for 35°N",
+  title: "Shaun Mukherjee | Partnership overview",
   description:
-    "Case studies and a simple first engagement for studio partnership with 35°N.",
+    "Case studies and a simple first engagement for studio partners and clients.",
   robots: { index: false, follow: false },
 }
 
 const PORTFOLIO = "https://shaunakmukherjee.github.io"
 const LINKEDIN = "https://www.linkedin.com/in/akshaun"
+const CALENDLY =
+  "https://calendly.com/shaunmukherjee-proton/tech-meeting-with-shaun"
 
 const CARD =
   "glow-border relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-6"
@@ -111,7 +113,7 @@ export default function PartnersPage() {
 
       <article className="relative z-10 mx-auto max-w-3xl pb-16 pt-12 sm:pb-24 sm:pt-16">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
-          For 35°N
+          For partners
         </p>
         <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-5xl">
           Shaun Mukherjee
@@ -267,10 +269,23 @@ export default function PartnersPage() {
             </ol>
           </div>
           <p className="mt-6 text-sm leading-relaxed text-white/55 sm:text-base">
-            35°N&apos;s existing ventures are untouched. This sits alongside
-            them.
+            A partner&apos;s existing ventures are untouched. This sits
+            alongside them.
           </p>
         </section>
+
+        <p className="mt-12 max-w-2xl text-sm leading-relaxed text-white/45 sm:mt-16">
+          Taking on scoped engagements now. If you have a system that isn&apos;t
+          holding together, the fastest way to start is a{" "}
+          <a
+            href={CALENDLY}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/55 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white/75 hover:decoration-white/40"
+          >
+            30-minute call
+          </a>.
+        </p>
       </article>
     </main>
   )
