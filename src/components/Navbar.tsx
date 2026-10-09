@@ -24,7 +24,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  if (pathname?.startsWith("/raiseready")) {
+  if (pathname?.startsWith("/raiseready") || pathname?.startsWith("/partners")) {
     return null
   }
 

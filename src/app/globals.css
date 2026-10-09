@@ -245,3 +245,40 @@ body::before {
     background-position: 0% 50%;
   }
 }
+
+/* ── Print / PDF export (browser Print → Save as PDF) ──────────────── */
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: hsl(220 12% 6%) !important;
+    color: hsl(210 50% 98%) !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body::before,
+  .aurora-blob,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .print-page {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
