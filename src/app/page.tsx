@@ -7,6 +7,7 @@ import MagneticLink from "@/components/motion/MagneticLink"
 import SectionHeading from "@/components/motion/SectionHeading"
 import AnimatedHeading from "@/components/motion/AnimatedHeading"
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal"
+import TechMarquee from "@/components/TechMarquee"
 import { projects } from "@/data/projects"
 
 const CALENDLY =
@@ -32,11 +33,11 @@ const engagementLevels = [
   },
   {
     level: "Level 3",
-    title: "Production Build",
+    title: "Senior AI Engineering",
     kicker: null,
     body:
-      "End-to-end design and delivery of production AI systems, from prototype to something real users and investors can rely on.",
-    fit: "Best for: Funded teams ready to scale their core product.",
+      "Hands-on design and delivery of AI systems such as agents, RAG pipelines and LLM features, from prototype to production. Available as a focused sprint of a few weeks or an ongoing part-time engagement.",
+    fit: "Best for: Teams that need a senior AI engineer without a full-time hire.",
   },
   {
     level: "Level 4",
@@ -87,10 +88,22 @@ const testimonials = [
 
 const roles: Role[] = [
   {
+    title: "Founder — iJamU",
+    period: "2026 — Present",
+    body: "Building an AI booking agent for independent talent, running on Claude Sonnet. Pre-seed, with pilots underway with speakers and performers.",
+    dot: "bg-cyan-400",
+  },
+  {
     title: "VP Engineering & Fractional Tech Lead — Footura AI (part-time)",
     period: "Apr 2024 — Present",
     body: "Architected and scaled AI coaching platform for both web and mobile using React Native, Swift/Kotlin, Next.js, NestJS, and LLMs. Reduced latency by 30% and increased engagement by 40%.",
     dot: "bg-cyan-400",
+  },
+  {
+    title: "Fractional Tech Lead — KedAI (YourLume) (part-time)",
+    period: "Jan 2025 — Present",
+    body: "Worked on YourLume, an AI-powered edtech platform centred on intelligent retrieval and conversational workflows, building semantic search with LangChain, Pinecone and Weaviate and backend services that connect LLMs to structured and unstructured data.",
+    dot: "bg-pink-400",
   },
   {
     title: "Founder & AI Engineer — AkShaun ",
@@ -162,7 +175,7 @@ export default function Home() {
             <span className="relative inline-flex h-1.5 w-1.5">
               <span className="absolute inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-ring" />
             </span>
-            Available for fractional CTO and advisory work
+            Available for fractional CTO, advisory and senior AI engineering work: short sprints or long-term.
           </span>
         </Reveal>
 
@@ -177,10 +190,12 @@ export default function Home() {
 
         <Reveal delay={0.2} amount={0.2}>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:mt-6 sm:text-lg">
-            I help founders turn AI ideas into products that work and raise
-            money, and help investors understand what they&apos;re really
-            funding. Seven years across AI, startups and production engineering.
-            MS Computer Science, Johns Hopkins.
+            I&apos;m a senior AI engineer and fractional CTO. I help founders
+            turn AI ideas into products that work and raise money, help
+            investors understand what they&apos;re really funding, and still
+            write production code myself, including agents, RAG and LLM
+            products. 7 years across AI, startups and production engineering. MS
+            Computer Science, Johns Hopkins.
           </p>
         </Reveal>
 
@@ -219,10 +234,7 @@ export default function Home() {
           <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/35">
             Shipped with
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-white/55 sm:text-base">
-            Hands-on with LLMs, RAG, AI agents, Python, Next.js and mobile,
-            from prototype to production.
-          </p>
+          <TechMarquee className="mt-4" />
         </Reveal>
 
         {/* Scroll cue */}
@@ -283,6 +295,10 @@ export default function Home() {
               Most founders start with Technical Clarity and continue only if
               it&apos;s clearly worth it.
             </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
+              I take on a small number of engagements at a time, so each one
+              gets real attention.
+            </p>
             <MagneticLink
               href={CALENDLY}
               variant="primary"
@@ -331,6 +347,7 @@ export default function Home() {
               stack={project.stack}
               image={project.image}
               link={project.link}
+              badge={project.badge}
             />
           ))}
         </div>

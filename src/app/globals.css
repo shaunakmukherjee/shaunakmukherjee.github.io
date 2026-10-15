@@ -199,6 +199,36 @@ body::before {
   animation-play-state: paused;
 }
 
+.tech-marquee-track {
+  animation-duration: 36s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .tech-marquee-track {
+    animation: none !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100%;
+    flex-wrap: wrap;
+    will-change: auto;
+  }
+
+  .tech-marquee-track ul[aria-hidden="true"] {
+    display: none !important;
+  }
+
+  .tech-marquee-track ul {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+}
+
 /* ── Focus & scrollbar polish ──────────────────────────────────────── */
 
 :focus-visible {

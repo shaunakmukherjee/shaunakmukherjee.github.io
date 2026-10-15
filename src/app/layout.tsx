@@ -11,20 +11,18 @@ const inter = Inter({
 
 export const metadata = {
   metadataBase: new URL("https://shaunakmukherjee.github.io"),
-  title:
-    "Shaun Mukherjee | Fractional CTO & AI Architect for Founders and Investors",
+  title: "Shaun Mukherjee | Fractional CTO & Senior AI Engineer",
   description:
-    "Senior technical leadership for founders and investors: AI product strategy, technical due diligence, and production builds, without a full-time hire.",
+    "Senior AI engineer and fractional CTO for founders and investors: AI product strategy, technical due diligence, and hands-on builds, for short sprints or long-term engagements.",
   verification: {
     other: {
       'msvalidate.01': ['06AF66FADC8DBE65F9B264C90D3D37FE'],
     },
   },
     openGraph: {
-    title:
-      "Shaun Mukherjee | Fractional CTO & AI Architect for Founders and Investors",
+    title: "Shaun Mukherjee | Fractional CTO & Senior AI Engineer",
     description:
-      "Senior technical leadership for founders and investors: AI product strategy, technical due diligence, and production builds, without a full-time hire.",
+      "Senior AI engineer and fractional CTO for founders and investors: AI product strategy, technical due diligence, and hands-on builds, for short sprints or long-term engagements.",
     url: "https://shaunakmukherjee.github.io",
     siteName: "Shaun's Portfolio",
     images: [
@@ -32,17 +30,16 @@ export const metadata = {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Shaun Mukherjee, Fractional CTO & AI Architect",
+        alt: "Shaun Mukherjee, Fractional CTO & Senior AI Engineer",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Shaun Mukherjee | Fractional CTO & AI Architect for Founders and Investors",
+    title: "Shaun Mukherjee | Fractional CTO & Senior AI Engineer",
     description:
-      "Senior technical leadership for founders and investors: AI product strategy, technical due diligence, and production builds, without a full-time hire.",
+      "Senior AI engineer and fractional CTO for founders and investors: AI product strategy, technical due diligence, and hands-on builds, for short sprints or long-term engagements.",
     images: ["/og.jpg"],
   },
 }

@@ -1,5 +1,32 @@
 // src/data/projects.ts
-export const projects = [
+export type Project = {
+  title: string
+  description: string
+  outcome: string
+  image: string
+  link: string
+  stack: string[]
+  badge?: string
+}
+
+export const projects: Project[] = [
+  {
+    title: "iJamU",
+    description:
+      "An AI booking agent for independent performers and speakers. It finds gigs, negotiates with organisers over WhatsApp, and secures the deposit in escrow until after the show. Now running pilots with speakers and performers.",
+    outcome: "",
+    image: "/projects/ijamu-2.png",
+    link: "https://ijamu.xyz",
+    badge: "Founder · Pre-seed",
+    stack: [
+      "AI Agents",
+      "LLM",
+      "Multi-turn Negotiation",
+      "Next.js",
+      "Supabase",
+      "Stablecoin Escrow",
+    ],
+  },
   {
     title: "Footura",
     description:

@@ -17,13 +17,14 @@ type Props = {
   stack: string[]
   image: string
   link: string
+  badge?: string
   /** Stagger index, used to offset the scroll-in animation. */
   index?: number
 }
 
 const getTechBadgeColor = (tech: string): string => {
   // AI/ML stack
-  if (['RAG', 'Vector Search', 'Embeddings', 'Vector Database', 'LLMs', 'AI Image Generation', 'Claude API', 'AI Agent', 'AI Coaching', 'Multi-Agent Pipelines', 'Speech-to-Text'].includes(tech)) {
+  if (['RAG', 'Vector Search', 'Embeddings', 'Vector Database', 'LLMs', 'LLM', 'AI Image Generation', 'Claude API', 'AI Agent', 'AI Agents', 'AI Coaching', 'Multi-Agent Pipelines', 'Speech-to-Text', 'Multi-turn Negotiation', 'Stablecoin Escrow'].includes(tech)) {
     return 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
   }
   // Frontend
@@ -52,6 +53,7 @@ export default function ProjectCard({
   stack,
   image,
   link,
+  badge,
   index = 0,
 }: Props) {
   const reduce = useReducedMotion()
@@ -143,11 +145,15 @@ export default function ProjectCard({
             <h3 className="text-lg font-semibold transition-colors group-hover:text-cyan-200 sm:text-xl">
               {title}
             </h3>
-            {stack.includes("Mobile App") && (
+            {badge ? (
+              <span className="inline-block rounded-full bg-indigo-500/20 px-2.5 py-0.5 text-[11px] font-medium text-indigo-300">
+                {badge}
+              </span>
+            ) : stack.includes("Mobile App") ? (
               <span className="inline-block rounded-full bg-indigo-500/20 px-2.5 py-0.5 text-[11px] font-medium text-indigo-300">
                 Mobile App
               </span>
-            )}
+            ) : null}
           </div>
 
           <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
